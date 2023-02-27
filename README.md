@@ -1,3 +1,48 @@
+# This README is a working in progress 🚧
+
+Right now, this README is a little Frankenstein, with loosely disconnected texts in Portuguese and English that I add while I'm developing the project. Please ignore it for now.
+
+I'll update it with a clean and readable version when reaching certain project milestones. 
+
+## Technologies
+
+- node v16.15.1;
+- npm v8.11.0;
+- React v18.2.0;
+- React Router v6.8.1;
+
+## Instalação
+
+O projeto foi criado com o Create React App, utilizando Node.js e npm. É necessário estar com ambos instalados em sua máquina para rodar a aplicação.
+
+Após clonar/baixar o projeto, abra um terminal, navegue até a pasta do projeto e rode o seguinte comando para instalar todas as dependências necessárias:
+
+    npm install
+
+Após isso, você pode rodar a aplicação em modo de desenvolvimento com o seguinte comando:
+
+    npm start
+A aplicação irá rodar no endereço http://localhost:3000.
+
+
+## Instalation
+
+This project was bootstrapped with Create React App, using Node.js and npm. You need both installed in order to run the app.
+
+After cloning or downloading this project, open a terminal, navigate to the project's folder and run the following command in order to install all necessary dependencies:
+
+    npm install
+
+*[Click here](https://github.com/facebook/create-react-app/issues/11174) to check the info regarding an `npm audit`'s vulnerability warning that may show up in the console.*
+
+After that, you can run the app in the development mode with the following command:
+
+    npm start
+
+The app will run at http://localhost:3000.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
