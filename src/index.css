@@ -8,9 +8,38 @@
 
   /* Color for texts */
   --white: #FFF;
-  --darg-gray: #444444;
+  --dark-gray: #444444;
 
   /* Texts */
   --font-title: 'Calistoga', cursive;
   --font-text: 'Raleway', sans-serif;
+}
+
+body {
+  /* font-weight font-size/line-height font-family */
+  font: 500 20px/40px var(--font-text);
+  text-align: center;
+  color: var(--dark-gray);
+}
+
+h1 {
+  font: 400 1.6em/42px var(--font-title);
+}
+
+h2 {
+  font: 700 1.6em/38px var(--font-text);
+  text-align: center;
+}
+
+a {
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.2em;
+    line-height: 83px;
+  }
 }
