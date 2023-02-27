@@ -4,12 +4,42 @@ Right now, this README is a little Frankenstein, with loosely disconnected texts
 
 I'll update it with a clean and readable version when reaching certain project milestones. 
 
+## O desafio
+
+O **CodeChella** é um festival de música alternativa que acontece anualmente, é composto por gêneros diversos e visa promover uma experiência encantadora e inesquecível para o visitante, proporcionando uma integração multicultural e social. 
+
+Visando sua divulgação e a venda de ingressos, o festival deseja **implementar um site** que possibilite essas ações:
+
+- Uma página inicial que mostrará as atrações do festival;
+
+- Uma página para explicar a experiência do festival, mostrando os diversos palcos;
+
+- Uma página para demonstrar os setores disponíveis para compra de ingresso;
+
+- Uma página de perguntas frequentes;
+
+- Uma página para compra de ingressos, por meio do preenchimento de um formulário;
+
+- Uma página para mostrar o ingresso gerado.
+
+**Atenção:** é muito importante que o site seja **responsivo** para dar aos clientes a facilidade de comprar através de dispositivos mobiles.
+
+[Clique aqui](https://www.figma.com/file/xHLPBeA2ujaXbBjHMK9xh7/CodeChella-%7C-Challenge-I---Front-end-2023?node-id=) para acessar o modelo Figma para o site.
+
 ## Technologies
 
 - node v16.15.1;
 - npm v8.11.0;
 - React v18.2.0;
 - React Router v6.8.1;
+
+## Semana 1
+
+A cada semana é disponibilizado um Trello com as tarefas a serem realizadas.
+
+Para a primeira semana, é necessário desenvolver três telas (páginas): a página inicial, a página sobre a experiência proporcionada pelo festival e a página mostrando o mapa de setores. 
+
+O site possui dois temas: Verão e Boreal, cada um com uma paleta de cores diferentes. O projeto pode ser desenvolvido escolhendo um dos temas, e fica como *desafio* criar uma funcionalidade para que o usuário possa escolher qual tema utilizar na página, alterando-a dinamicamente com o tema escolhido.
 
 ## Instalação
 
