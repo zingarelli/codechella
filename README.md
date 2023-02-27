@@ -41,6 +41,12 @@ Para a primeira semana, é necessário desenvolver três telas (páginas): a pá
 
 O site possui dois temas: Verão e Boreal, cada um com uma paleta de cores diferentes. O projeto pode ser desenvolvido escolhendo um dos temas, e fica como *desafio* criar uma funcionalidade para que o usuário possa escolher qual tema utilizar na página, alterando-a dinamicamente com o tema escolhido.
 
+Visando responsividade, decidi utilizar o conceito de mobile-first para criar as páginas. Os tamanhos de tela considerados na hora de estilizar o layout foram: mobile (360px), tablet (768px) e desktop (1024px).
+
+Componentes criados:
+
+- Header: renderiza a logo e o menu de links;
+
 ## Instalação
 
 O projeto foi criado com o Create React App, utilizando Node.js e npm. É necessário estar com ambos instalados em sua máquina para rodar a aplicação.

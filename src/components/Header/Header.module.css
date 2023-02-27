@@ -1,0 +1,145 @@
+.header__container {
+    background-color: var(--summer-dark-blue);
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu__links {
+    position: absolute;
+    top: 105px;
+    right: 0;
+    width: 65vw;
+    background-color: var(--summer-dark-blue);
+    padding: 1em;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s ease-in;
+}
+
+.menu__links>ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5em;
+}
+
+.menu__links>ul>li {
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 0.5em;
+    width: 63%;
+}
+
+.menu__links>ul>li:last-child {
+    border: none;
+}
+
+/* Menu animation */
+.menu__checkbox {
+    display: none;
+}
+
+.menu__icon {
+    display: block;
+    width: 24px;
+    min-height: 16px;
+    position: relative;
+}
+
+.icon__trace {
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+    position: absolute;
+    transition: .2s ease-in;
+}
+
+.menu__icon .icon__trace:nth-child(1) {
+    top: 0;
+}
+
+.menu__icon .icon__trace:nth-child(2) {
+    top: 7px;
+}
+
+.menu__icon .icon__trace:nth-child(3) {
+    top: 14px;
+}
+
+/* animate menu icon */
+.menu__checkbox:checked+.menu__icon .icon__trace:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 7px;
+}
+
+.menu__checkbox:checked+.menu__icon .icon__trace:nth-child(2) {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+.menu__checkbox:checked+.menu__icon .icon__trace:nth-child(3) {
+    transform: rotate(45deg);
+    top: 7px;
+}
+
+/* show menu */
+.menu__checkbox:checked~.menu__links {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .header__container {
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .menu__container {
+        width: 100%;
+    }
+
+    .menu__icon {
+        display: none;
+    }
+
+    .menu__links {
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        top: 0;
+        width: auto;
+        padding: 0;
+    }
+
+    .menu__links>ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .menu__links>ul>li {
+        border: none;
+        width: auto;
+        padding: 0;
+    }
+
+    .menu__links>ul>li>a:hover {
+        border-bottom: 2px solid var(--white);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header__container {
+        flex-direction: row;
+        height: 128px;
+    }
+
+    .menu__container {
+        width: auto;
+    }
+
+    .menu__links>ul {
+        column-gap: 1.6em;
+        justify-content: flex-end;
+    }
+}
