@@ -1,0 +1,16 @@
+:root {
+  /* Color palette - summer theme */
+  --summer-gradient: linear-gradient(#C8DEEF, #FBF0DD, #FACF9D);
+  --summer-dark-blue: #2E7BA2;
+  --summer-light-blue: #C8DEEF;
+  --summer-blue-hover: #519EC5;
+  --summer-mustard: #DF9010;
+
+  /* Color for texts */
+  --white: #FFF;
+  --darg-gray: #444444;
+
+  /* Texts */
+  --font-title: 'Calistoga', cursive;
+  --font-text: 'Raleway', sans-serif;
+}
