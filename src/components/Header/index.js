@@ -1,9 +1,10 @@
 import styles from './Header.module.css';
+import logo from './logo.png';
 
 export default function Header() {
     return (
         <header className={styles.header__container}>
-            <img src="/logo.png" alt="Logo da CodeChella" />
+            <img src={logo} alt="Logo do Festival CodeChella" />
             <div className={styles.menu__container}>
                 <input type="checkbox" id="toggle" className={styles.menu__checkbox} />
                 <label htmlFor="toggle" className={styles.menu__icon}>
