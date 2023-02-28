@@ -1,0 +1,41 @@
+.banner__container {
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* 
+    Adding opacity only to the background image.
+    Tutorial: https://coder-coder.com/background-image-opacity/
+*/
+.banner__opacity::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.banner__text {
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    .banner__container {
+        height: 384px;
+    }
+
+    .banner__text {
+        width: 70vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .banner__container {
+        height: 407px;
+    }
+}

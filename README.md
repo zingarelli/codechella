@@ -47,6 +47,9 @@ Componentes criados:
 
 - Header: renderiza o logo e o menu de links.
 - Footer: renderiza o logo, lista de links de redes sociais e texto copyright.
+- Banner: recebe como prop uma imagem e um texto, sendo o texto opcional. Quando o texto está presente, é adicionado um estilo à imagem para ficar mais opaca.
+
+Usei o [TinyPNG](https://tinypng.com) para comprimir as imagens.
 
 ## TODO
 
