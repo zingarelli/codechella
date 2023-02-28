@@ -49,6 +49,7 @@ Componentes criados:
 - Footer: renderiza o logo, lista de links de redes sociais e texto copyright. Os itens são posicionados de maneira diferente a depender do tamanho da tela, e por isso utilizei o Grid para facilitar esse posicionamento
 - Banner: recebe como prop uma imagem e um texto, sendo o texto opcional. Quando o texto está presente, é adicionado um estilo à imagem para ficar mais opaca. 
 - MainArticle: renderiza uma imagem, um título e um texto. Como no Footer, utilizei o Grid para facilitar os diferentes posicionamentos dos elementos a depender do tamanho da tela. Tentei fazer um componente genérico para reutilizar em outras páginas que terão seções parecidas, mas cada uma tem pequenas alterações no layout do texto (algumas são centralizadas, outras alinhadas à direita/esquerda) e isso estava dificultando em criar um componente genérico, então, por enquanto, deixei o componente personalizado para o conteúdo da página inicial.
+- Button: renderiza um botão, com um texto (props `children`) e uma pequena imagem, recebida via props.
 
 Usei o [TinyPNG](https://tinypng.com) para comprimir as imagens.
 

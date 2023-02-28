@@ -1,0 +1,31 @@
+.button__container {
+    font: 500 20px/40px var(--font-text);
+    background-color: var(--summer-dark-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 16px;
+    box-shadow: 4px 4px var(--dark-gray);
+    padding: 0.4em 0.8em;
+    display: flex;
+    column-gap: 0.8em;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.button__container:hover {
+    background-color: var(--summer-blue-hover);
+}
+
+/* simulates button being pressed down */
+.button__container:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+@media screen and (min-width: 780px) {
+    .button__container {
+        width: auto;
+    };
+}
