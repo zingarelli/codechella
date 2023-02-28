@@ -45,7 +45,12 @@ Visando responsividade, decidi utilizar o conceito de mobile-first para criar as
 
 Componentes criados:
 
-- Header: renderiza a logo e o menu de links;
+- Header: renderiza o logo e o menu de links.
+- Footer: renderiza o logo, lista de links de redes sociais e texto copyright.
+
+## TODO
+
+Talvez passar o logo e a lista de links por prop para o Header?
 
 ## Instalação
 
