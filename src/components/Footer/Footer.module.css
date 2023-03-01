@@ -35,6 +35,7 @@
     .footer__links {
         display: flex;
         column-gap: 8px;
+        align-items: flex-end;
     }
 }
 
@@ -70,6 +71,6 @@
     }
 
     .footer__copyright p:first-child {
-        margin-right: 0;
+        margin: 0 0 8px;
     }
 }   
