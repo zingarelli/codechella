@@ -1,4 +1,3 @@
-import styles from './Home.module.css';
 import carousel from "assets/carousel.png";
 import festival from "assets/festival_2.png";
 import fans from "assets/fans.png";
@@ -12,7 +11,7 @@ export default function Home() {
     return (
         <>
             <Banner image={carousel} text="Boas-vindas ao #CodeChella2023!" />
-            <main className={styles.container}>
+            <main>
                 <MainArticle
                     image={fans}
                     alt='fãs cantando na pista'
