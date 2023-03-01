@@ -1,0 +1,10 @@
+.wrapper__title {
+    font: 400 2.1rem/62px var(--font-title);
+    padding: 32px 0;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper__title {
+        font: 400 3.2rem/83px var(--font-title);
+    }
+}

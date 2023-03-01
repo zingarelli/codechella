@@ -50,8 +50,56 @@ Componentes criados:
 - Banner: recebe como prop uma imagem e um texto, sendo o texto opcional. Quando o texto está presente, é adicionado um estilo à imagem para ficar mais opaca. 
 - MainArticle: renderiza uma imagem, um título e um texto. Como no Footer, utilizei o Grid para facilitar os diferentes posicionamentos dos elementos a depender do tamanho da tela. Tentei fazer um componente genérico para reutilizar em outras páginas que terão seções parecidas, mas cada uma tem pequenas alterações no layout do texto (algumas são centralizadas, outras alinhadas à direita/esquerda) e isso estava dificultando em criar um componente genérico, então, por enquanto, deixei o componente personalizado para o conteúdo da página inicial.
 - Button: renderiza um botão, com um texto (props `children`) e uma pequena imagem, recebida via props.
+- LineUp: responsável por renderizar a lista de atrações, ele é composto por três componentes. Quebrei dessa forma, pois há pequenos detalhes de estilos que englobam diferentes partes dessa seção e consegui trabalhar melhor separando em três componentes
+    - LineUpWrapper: irá mostrar todas as atrações (que são o componente LineUpContent), separadas por data. Recebe um título via props;
+    - LineUpContent: renderiza um dia de atração e suas bandas (que são o componente LineUpLayer), também recebendo um título via props, que seria a data da atração; 
+    - LineUpLayer: é quem de fato renderiza a lista de bandas. Como visualmente as bandas podem ter um tamanho de fonte diferente, esse componente possui uma prop chamada "layer" que irá adicionar uma classe à banda, sendo essa classe responsável por estilizar o texto com o tamanho de fonte escolhido. Os valores para a prop layer são "`l1`, `l2`, `l3` e `l4`".
+
+    - Exemplo de código de atração, mostrando como usar os três componentes:
+
+```js
+<LineUpWrapper title='/Line-Up/'>
+    <LineUpContent title='SÁBADO <11/03>'>
+        <LineUpLayer layer='l1'>
+            <p>System of a DOM</p>
+        </LineUpLayer>
+        <LineUpLayer layer='l2'>
+            <p>Python Maiden</p>
+            <p>Apollo Client 2001</p>
+        </LineUpLayer>
+    </LineUpContent>
+
+    <LineUpContent title='DOMINGO <12/03>'>
+        <LineUpLayer layer='l1'>
+            <p>Lana Del Ploy</p>
+        </LineUpLayer>
+        <LineUpLayer layer='l2'>
+            <p>Dua Lib</p>
+            <p>The Backnd</p>
+        </LineUpLayer>
+    </LineUpContent>
+</LineUpWrapper>
+```
+
 
 Usei o [TinyPNG](https://tinypng.com) para comprimir as imagens.
+
+## CSS Variables
+/* Color palette - summer theme */
+--summer-gradient: linear-gradient(#C8DEEF, #FBF0DD, #FACF9D);
+--summer-dark-blue: #2E7BA2;
+--summer-light-blue: #C8DEEF;
+--summer-blue-hover: #519EC5;
+--summer-mustard: #DF9010;
+--summer-yellow: #FACF9D;
+
+/* Color for texts */
+--white: #FFF;
+--dark-gray: #444444;
+
+/* Texts */
+--font-title: 'Calistoga', cursive;
+--font-text: 'Raleway', sans-serif;
 
 ## TODO
 
