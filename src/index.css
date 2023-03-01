@@ -38,9 +38,24 @@ a {
   text-decoration: none;
 }
 
+main {
+  background: var(--summer-gradient);
+  padding: 0 24px;
+}
+
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 3.2rem;
     line-height: 83px;
+  }
+
+  main {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 0 120px;
   }
 }
