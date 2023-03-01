@@ -6,7 +6,7 @@
         'text';
     row-gap: 1.5em;
     justify-items: center;
-    padding: 1.2em 1.5em;
+    padding: 24px 30px;
 }
 
 .article__image {
@@ -31,7 +31,7 @@
 
 @media screen and (min-width: 680px) {
     .article__container {
-        padding: 1.2em 4em;
+        padding: 24px 80px;
     }
 
     .article__image {
@@ -47,7 +47,7 @@
         grid-template-columns: 1fr 1fr;
         column-gap: 2.4em;
         align-items: center;
-        padding: 3.2em 6em;
+        padding: 64px 120px;
     }
 
     .article__image {

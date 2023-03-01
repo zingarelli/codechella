@@ -16,7 +16,7 @@
   --font-text: 'Raleway', sans-serif;
 }
 
-body {
+html {
   /* font-weight font-size/line-height font-family */
   font: 500 20px/40px var(--font-text);
   text-align: center;
@@ -24,11 +24,11 @@ body {
 }
 
 h1 {
-  font: 400 1.6em/42px var(--font-title);
+  font: 400 1.6rem/42px var(--font-title);
 }
 
 h2 {
-  font: 700 1.6em/38px var(--font-text);
+  font: 700 1.6rem/38px var(--font-text);
   text-align: center;
 }
 
@@ -40,7 +40,7 @@ a {
 
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 3.2em;
+    font-size: 3.2rem;
     line-height: 83px;
   }
 }

@@ -1,7 +1,7 @@
 .footer__container {
     height: 332px;
     background-color: var(--summer-yellow);
-    padding: 1.2em 1.5em;
+    padding: 24px 30px;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     align-items: center;
@@ -24,7 +24,7 @@
 }
 
 .footer__copyright p:first-child {
-    margin-right: .3em;
+    margin-right: 6px;
 }
 
 @media screen and (min-width: 768px) {
@@ -47,7 +47,7 @@
         grid-template-rows: 1fr 1fr;
         row-gap: 8px;
         justify-items: start;
-        padding: 0 3em;
+        padding: 0 60px;
     }
 
     .footer__logo {

@@ -12,7 +12,7 @@
     right: 0;
     width: 65vw;
     background-color: var(--summer-dark-blue);
-    padding: 1em;
+    padding: 20px;
     visibility: hidden;
     opacity: 0;
     transition: 0.2s ease-in;
@@ -27,7 +27,7 @@
 
 .menu__links>ul>li {
     border-bottom: 1px solid var(--white);
-    padding-bottom: 0.5em;
+    padding-bottom: 10px;
     width: 63%;
 }
 
@@ -87,6 +87,7 @@
 .menu__checkbox:checked~.menu__links {
     visibility: visible;
     opacity: 1;
+    z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
