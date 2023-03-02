@@ -1,4 +1,4 @@
-import experience from './assets/experience.png';
+import experience from './assets/banner.png';
 import joy from './assets/joy.png';
 import recycle from './assets/recycle.png';
 import ferrisWheel from './assets/ferris-wheel.png';

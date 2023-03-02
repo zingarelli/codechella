@@ -1,4 +1,4 @@
-import carousel from "./assets/carousel.png";
+import carousel from "./assets/banner.png";
 import festival from "./assets/festival.png";
 import fans from "./assets/fans.png";
 import ticket from "./assets/ticket-icon.png";
