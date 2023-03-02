@@ -4,7 +4,7 @@ import fans from "./assets/fans.png";
 import ticket from "./assets/ticket-icon.png";
 import Banner from "components/Banner";
 import Button from "components/Button";
-import MainArticle from "components/MainArticle";
+import Article from "components/Article";
 import { LineUpContent, LineUpLayer, LineUpWrapper } from "components/LineUp";
 
 export default function Home() {
@@ -12,14 +12,15 @@ export default function Home() {
         <>
             <Banner image={carousel} text="Boas-vindas ao #CodeChella2023!" />
             <main>
-                <MainArticle
+                <Article
                     image={fans}
                     alt='fãs cantando na pista'
                     title={`< 11 e 12 de Março >\nAluródromo de São Paulo`}
+                    highlight
                 >
                     <p>Hora de programar nossa memória com novas lembranças! Uma nova experiência sobre música, linguagens e, claro, tecnologia! Somos um festival diverso, com vários artistas e referências. Divirta-se!</p>
                     <Button image={ticket} >Comprar ingresso!</Button>
-                </MainArticle>
+                </Article>
                 <LineUpWrapper title='/Line-Up/'>
                     <LineUpContent title='SÁBADO <11/03>'>
                         <LineUpLayer layer='l1'>

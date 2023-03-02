@@ -48,7 +48,9 @@ Componentes criados:
 - Header: renderiza o logo e o menu de links.
 - Footer: renderiza o logo, lista de links de redes sociais e texto copyright. Os itens são posicionados de maneira diferente a depender do tamanho da tela, e por isso utilizei o Grid para facilitar esse posicionamento
 - Banner: recebe como prop uma imagem e um texto, sendo o texto opcional. Quando o texto está presente, é adicionado um estilo à imagem para ficar mais opaca. 
-- MainArticle: renderiza uma imagem, um título e um texto. Como no Footer, utilizei o Grid para facilitar os diferentes posicionamentos dos elementos a depender do tamanho da tela. Tentei fazer um componente genérico para reutilizar em outras páginas que terão seções parecidas, mas cada uma tem pequenas alterações no layout do texto (algumas são centralizadas, outras alinhadas à direita/esquerda) e isso estava dificultando em criar um componente genérico, então, por enquanto, deixei o componente personalizado para o conteúdo da página inicial.
+- Article: renderiza uma imagem, um título e um conteúdo (que pode ser um texto, texto + botão, etc), recebidos via props. Ela possuia duas props adicionais para alteração de estilos:
+    - imagePosition: informa em qual lado a imagem vai ser posicionada em relação ao texto (no topo, à esquerda ou à direita). O texto também é alinhado de acordo com a posição da imagem. Por padrão, fica à esquerda. Isso só irá afetar o layout para telas grandes (acima de 1024px). Telas menores terão sempre a imagem no topo e o texto abaixo, centralizado.
+    - highlight: adicionei esta prop (boolean) pois o texto na página inicial possui alguns estilos diferentes (fica sempre centralizado e recebe um margin-bottom adicional). Considerei isto como um "artigo destacado" (highlighted). É false por padrão.
 - Button: renderiza um botão, com um texto (props `children`) e uma pequena imagem, recebida via props.
 - LineUp: responsável por renderizar a lista de atrações, ele é composto por três componentes. Quebrei dessa forma, pois há pequenos detalhes de estilos que englobam diferentes partes dessa seção e consegui trabalhar melhor separando em três componentes
     - LineUpWrapper: irá mostrar todas as atrações (que são o componente LineUpContent), separadas por data. Recebe um título via props;
@@ -81,8 +83,11 @@ Componentes criados:
 </LineUpWrapper>
 ```
 
-
 Usei o [TinyPNG](https://tinypng.com) para comprimir as imagens.
+
+
+## TODO
+Colocar um sublinhado no link que estiver ativo (página que estiver aberta).
 
 ## CSS Variables
 /* Color palette - summer theme */
@@ -100,10 +105,6 @@ Usei o [TinyPNG](https://tinypng.com) para comprimir as imagens.
 /* Texts */
 --font-title: 'Calistoga', cursive;
 --font-text: 'Raleway', sans-serif;
-
-## TODO
-
-Talvez passar o logo e a lista de links por prop para o Header?
 
 ## Instalação
 
