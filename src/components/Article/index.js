@@ -1,4 +1,8 @@
-import styles from './Article.module.css';
+/*
+    Not using CSS module because this component will be used as a template 
+    for others components that might change the styles for its inner elements
+*/
+import './Article.css';
 
 /**
  * A component that renders an article contaning an image, a title and some other content (like texts).
@@ -17,11 +21,11 @@ export default function Article({ image, alt, title, imagePosition = 'left', hig
     const displayOrder = `article__container--${imagePosition}`;
 
     return (
-        <article className={`${styles.article__container} ${styles[displayOrder]}`}>
-            <img src={image} alt={alt} className={styles.article__image} />
-            <div className={`${styles.article__content} ${styles[highlightContent]}`}>
-                <h2 className={`${styles.article__header} ${styles[highlightHeader]}`}>{title}</h2>
-                <div className={styles.article__text}>
+        <article className={`article__container ${displayOrder}`}>
+            <img src={image} alt={alt} className='article__image' />
+            <div className={`article__content ${highlightContent}`}>
+                <h2 className={`article__header ${highlightHeader}`}>{title}</h2>
+                <div className='article__text'>
                     {children}
                 </div>
             </div>
