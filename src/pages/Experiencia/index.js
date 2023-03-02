@@ -8,7 +8,7 @@ import Article from 'components/Article';
 export default function Experiencia() {
     return (
         <>
-            <Banner image={experience} text='A Experiência' />
+            <Banner image={experience} position='top' text='A Experiência' />
             <main>
                 <Article 
                     image={joy} 
