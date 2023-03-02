@@ -10,9 +10,9 @@
     position: absolute;
     top: 105px;
     right: 0;
-    width: 65vw;
+    width: 193px;
     background-color: var(--summer-dark-blue);
-    padding: 20px;
+    padding: 16px;
     visibility: hidden;
     opacity: 0;
     transition: 0.2s ease-in;
@@ -28,7 +28,7 @@
 .menu__links>ul>li {
     border-bottom: 1px solid var(--white);
     padding-bottom: 10px;
-    width: 63%;
+    width: 90%;
 }
 
 .menu__links>ul>li:last-child {
@@ -74,7 +74,7 @@
 }
 
 .menu__checkbox:checked+.menu__icon .icon__trace:nth-child(2) {
-    transform: translateX(-50px);
+    transform: translateX(50px);
     opacity: 0;
 }
 
