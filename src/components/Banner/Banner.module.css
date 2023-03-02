@@ -38,4 +38,8 @@
     .banner__container {
         height: 407px;
     }
+
+    .banner__text {
+        width: 50vw;
+    }
 }
