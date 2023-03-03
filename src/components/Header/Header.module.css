@@ -124,7 +124,8 @@
         padding: 0;
     }
 
-    .menu__links>ul>li>a:hover {
+    .menu__links>ul>li>a:hover, 
+    .active {
         border-bottom: 2px solid var(--white);
     }
 }
