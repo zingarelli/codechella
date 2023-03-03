@@ -1,0 +1,53 @@
+/* "injecting" new styles for elements of Article components */
+.mapa>article>img {
+    object-fit: contain;
+    border-radius: unset;
+}
+
+.mapa>article>div>h2 {
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.setores>article>img {
+    max-height: 239px;
+    object-fit: contain;
+}
+
+.setores>article>div>h2 {
+    margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+    .mapa>article>div>h2 {
+        font-size: 1.6rem;
+    }
+
+    main>h2 {
+        margin-top: 32px    ;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .setores {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 24px;
+    }
+
+    .setores>article {
+        margin: 32px 0;
+        padding: unset;
+        justify-content: unset;
+    }
+
+    .setores>article:nth-child(even) {
+        margin-top: 140px;
+    }
+
+    .setores>article>img,
+    .setores>article>div {
+        width: 100%;
+    }
+}
