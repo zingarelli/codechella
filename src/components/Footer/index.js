@@ -13,10 +13,10 @@ export default function Footer() {
                 <p>Acesse nossas redes:</p>
                 <nav>
                     <ul className={styles.footer__socials}>
-                        <li><a href="/"><img src={whatsapp} alt="Link para o WhatsApp do festival" /></a></li>
-                        <li><a href="/"><img src={twitch} alt="Link para o canal do festival na Twitch" /></a></li>
-                        <li><a href="/"><img src={instagram} alt="Link para o Instagram do festival" /></a></li>
-                        <li><a href="/"><img src={twitter} alt="Link para o Twitter do festival" /></a></li>
+                        <li><a href="https://www.whatsapp.com" target='_blank' rel="noopener noreferrer"><img src={whatsapp} alt="Link para o WhatsApp do festival" /></a></li>
+                        <li><a href="https://www.twitch.tv" target='_blank' rel="noopener noreferrer"><img src={twitch} alt="Link para o canal do festival na Twitch" /></a></li>
+                        <li><a href="https://www.instagram.com" target='_blank' rel="noopener noreferrer"><img src={instagram} alt="Link para o Instagram do festival" /></a></li>
+                        <li><a href="https://twitter.com" target='_blank' rel="noopener noreferrer"><img src={twitter} alt="Link para o Twitter do festival" /></a></li>
                     </ul>
                 </nav>
             </div>
