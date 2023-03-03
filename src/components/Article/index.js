@@ -19,8 +19,8 @@ export default function Article({ title, image, alt, imagePosition = 'left', chi
     return (
         <article className={`${styles.article__container} ${styles[displayOrder]}`}>
             <img src={image} alt={alt} className={styles.article__image} />
-            <div className={`${styles.article__content} ${styles.highlightContent}`}>
-                <h2 className={`${styles.article__header} ${styles.highlightHeader}`}>{title}</h2>
+            <div className={styles.article__content}>
+                <h2 className={styles.article__header} >{title}</h2>
                 <div className={styles.article__text}>
                     {children}
                 </div>
