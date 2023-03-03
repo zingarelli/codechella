@@ -2,6 +2,7 @@
 .mapa>article>img {
     object-fit: contain;
     border-radius: unset;
+    height: auto;
 }
 
 .mapa>article>div>h2 {
