@@ -1,0 +1,14 @@
+.title {
+    font-size: 1.4rem;
+    padding: .7em 0 .4em;
+}
+
+.text {
+    margin-bottom: 1em;
+}
+
+.image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+}
