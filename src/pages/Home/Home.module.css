@@ -1,0 +1,11 @@
+/* "injecting" new styles for elements of the Article component  */
+
+.main__container>article>div>h2 {
+    margin-bottom: 24px;
+}
+
+@media screen and (min-width: 1024px) {
+    .main__container>article>div * {
+        text-align: center;
+    }
+}

@@ -1,3 +1,4 @@
+import styles from './Home.module.css';
 import carousel from "./assets/banner.png";
 import festival from "./assets/festival.png";
 import fans from "./assets/fans.png";
@@ -11,12 +12,11 @@ export default function Home() {
     return (
         <>
             <Banner image={carousel} text="Boas-vindas ao #CodeChella2023!" />
-            <main>
+            <main className={styles.main__container}>
                 <Article
                     image={fans}
                     alt='fãs cantando na pista'
                     title={`< 11 e 12 de Março >\nAluródromo de São Paulo`}
-                    highlight
                 >
                     <p>Hora de programar nossa memória com novas lembranças! Uma nova experiência sobre música, linguagens e, claro, tecnologia! Somos um festival diverso, com vários artistas e referências. Divirta-se!</p>
                     <Button image={ticket} >Comprar ingresso!</Button>
