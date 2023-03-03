@@ -18,11 +18,6 @@
     white-space: pre-line;
 }
 
-/* Highlighted articles have an additional margin to their header */
-.article__header--highlight {
-    margin-bottom: 24px;
-}
-
 .article__text {
     display: flex;
     flex-direction: column;
@@ -37,11 +32,8 @@
         padding: 64px 0;
     }
 
-    .article__image {
-        width: 50%;
-    }
-
-    .article__content {
+    .article__image,
+    article__content {
         width: 50%;
     }
     
@@ -64,7 +56,6 @@
     .article__container--right {
         flex-direction: row-reverse;
     }
-
     .article__container--right > .article__content * {
         text-align: right;
     }
@@ -73,13 +64,7 @@
     .article__container--top {
         flex-direction: column;
     }
-
     .article__container--top > .article__content * {
-        text-align: center;
-    }
-
-    /* Highlighted articles have its text centered */
-    .article__content--highlight * {
         text-align: center;
     }
 }
