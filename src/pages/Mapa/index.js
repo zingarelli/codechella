@@ -19,7 +19,12 @@ export default function Mapa() {
                         alt='mapa do evento, mostrando o posicionamento do palco, das pistas, cadeiras e rampas'
                         title='Legenda'
                     >
-                        <img src={legenda} alt="legenda para o mapa, indicado a cor para cada pista, cadeira e rampa" />
+                        <p className={styles.legenda}>Pista Premium</p>
+                        <p className={styles.legenda}>Pista Comum</p>
+                        <p className={styles.legenda}>Cadeiras térreo</p>
+                        <p className={styles.legenda}>Cadeiras superiores</p>
+                        <p className={styles.legenda}>Rampas</p>
+                        {/* <img src={legenda} alt="" /> */}
                     </Article>
                 </div>
                 <h2>Mais detalhes sobre os setores:</h2>
