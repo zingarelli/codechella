@@ -1,5 +1,5 @@
 .header__container {
-    background-color: var(--summer-dark-blue);
+    background-color: var(--primary-color);
     height: 128px;
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
     top: 105px;
     right: 0;
     width: 193px;
-    background-color: var(--summer-dark-blue);
+    background-color: var(--primary-color);
     padding: 16px;
     visibility: hidden;
     opacity: 0;
@@ -26,7 +26,7 @@
 }
 
 .menu__links>ul>li {
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--text-color);
     padding-bottom: 10px;
     width: 90%;
 }
@@ -43,7 +43,7 @@
 .menu__icon {
     display: block;
     width: 24px;
-    min-height: 16px;
+    height: 24px;
     position: relative;
 }
 

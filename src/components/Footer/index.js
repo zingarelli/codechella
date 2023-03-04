@@ -1,11 +1,28 @@
 import styles from './Footer.module.css';
-import instagram from './instagram.png';
-import twitch from './twitch.png';
-import twitter from './twitter.png';
-import whatsapp from './whatsapp.png';
-import logo from './logo-gray.png'
+// TODO: is there a better way to import all this?
+import instagramSummer from './assets/socials/instagram-gray.png';
+import twitchSummer from './assets/socials/twitch-gray.png';
+import twitterSummer from './assets/socials/twitter-gray.png';
+import whatsappSummer from './assets/socials/whatsapp-gray.png';
+import logoSummer from './assets/logo/logo-gray.png';
+import instagramBoreal from './assets/socials/instagram-white.png';
+import twitchBoreal from './assets/socials/twitch-white.png';
+import twitterBoreal from './assets/socials/twitter-white.png';
+import whatsappBoreal from './assets/socials/whatsapp-white.png';
+import logoBoreal from './assets/logo/logo-white.png';
+import { useContext } from 'react';
+import { ThemeContext } from 'context/Theme';
 
 export default function Footer() {
+    const { theme, setTheme } = useContext(ThemeContext);
+
+    // import assets
+    const logo = theme === 'summer' ? logoSummer : logoBoreal;
+    const instagram = theme === 'summer' ? instagramSummer : instagramBoreal;
+    const twitch = theme === 'summer' ? twitchSummer : twitchBoreal;
+    const twitter = theme === 'summer' ? twitterSummer : twitterBoreal;
+    const whatsapp = theme === 'summer' ? whatsappSummer : whatsappBoreal;
+
     return (
         <footer className={styles.footer__container} >
             <img className={styles.footer__logo} src={logo} alt="Logo do Festival CodeChella" />
@@ -23,6 +40,11 @@ export default function Footer() {
             <div className={styles.footer__copyright}>
                 <p>Desenvolvido por Alura.</p>
                 <p>Projeto fictício sem fins comerciais.</p>
+            </div>
+            <div className={styles.theme__container}>
+                <p>Alterar tema:</p>
+                <span onClick={() => setTheme('summer')} className={styles.theme__summer}>Summer</span>
+                <span onClick={() => setTheme('boreal')} className={styles.theme__boreal}>Boreal</span>
             </div>
         </footer>
     )

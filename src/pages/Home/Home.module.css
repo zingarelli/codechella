@@ -1,7 +1,10 @@
-/* "injecting" new styles for elements of the Article component  */
-
+/* "injecting" new styles for elements of the Article and Banner components  */
 .main__container>article>div>h2 {
     margin-bottom: 24px;
+}
+
+.banner__small>div {
+    height: 338px;
 }
 
 @media screen and (min-width: 1024px) {

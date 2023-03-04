@@ -1,10 +1,10 @@
 .button__container {
-    font: 700 1rem/40px var(--font-text);
-    background-color: var(--summer-dark-blue);
+    font: 700 1rem/40px var(--white);
+    background-color: var(--primary-color);
     color: var(--white);
     border: none;
     border-radius: 16px;
-    box-shadow: 4px 4px var(--dark-gray);
+    box-shadow: 4px 4px var(--dark);
     padding: 8px 0;
     display: flex;
     column-gap: 16px;
@@ -15,7 +15,7 @@
 }
 
 .button__container:hover {
-    background-color: var(--summer-blue-hover);
+    background-color: var(--hover-color);
 }
 
 /* simulates button being pressed down */

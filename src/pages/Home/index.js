@@ -1,21 +1,33 @@
 import styles from './Home.module.css';
-import carousel from "./assets/banner.png";
-import festival from "./assets/festival.png";
-import fans from "./assets/fans.png";
-import ticket from "./assets/ticket-icon.png";
+import ticket from "./assets/common/ticket-icon.png";
+import carousel from "./assets/summer/carousel.png";
+import festival from "./assets/summer/festival.png";
+import fans from "./assets/summer/fans.png";
+import boreal from "./assets/boreal/boreal.png"
+import band from "./assets/boreal/band.png"
+import guitar from "./assets/boreal/guitar.png"
 import Banner from "components/Banner";
 import Button from "components/Button";
 import Article from "components/Article";
 import { LineUpContent, LineUpLayer, LineUpWrapper } from "components/LineUp";
+import { useContext } from 'react';
+import { ThemeContext } from 'context/Theme';
 
 export default function Home() {
+    const { theme } = useContext(ThemeContext);
+    const banner = theme === 'summer' ? carousel : boreal;
+    const articleImg = theme === 'summer' ? fans : band;
+    const bottomBanner = theme === 'summer' ? festival : guitar;
+    
     return (
         <>
-            <Banner image={carousel} text="Boas-vindas ao #CodeChella2023!" />
+            <div>
+                <Banner image={banner} text="Boas-vindas ao #CodeChella2023!" />
+            </div>
             <main className={styles.main__container}>
                 <Article
-                    image={fans}
-                    alt='fãs cantando na pista'
+                    image={articleImg}
+                    alt='foto ilustrativa do evento'
                     title={`< 11 e 12 de Março >\nAluródromo de São Paulo`}
                 >
                     <p>Hora de programar nossa memória com novas lembranças! Uma nova experiência sobre música, linguagens e, claro, tecnologia! Somos um festival diverso, com vários artistas e referências. Divirta-se!</p>
@@ -71,7 +83,9 @@ export default function Home() {
                     </LineUpContent>
                 </LineUpWrapper>
             </main>
-            <Banner image={festival} />
+            <div className={styles.banner__small}>
+                <Banner image={bottomBanner} />
+            </div>
         </>
     );
 }

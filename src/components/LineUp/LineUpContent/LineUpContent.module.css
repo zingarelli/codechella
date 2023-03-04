@@ -7,8 +7,8 @@
 }
 
 .title__content {
-    background-color: var(--summer-mustard);
-    color: var(--white);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     font: 400 1.6rem/42px var(--font-title);
     width: fit-content;
     padding: 16px 14px;
@@ -71,7 +71,7 @@
     .item__title::before,
     .item__title::after {
         content: '';
-        border-bottom: 1px solid var(--summer-mustard);
+        border-bottom: 1px solid var(--secondary-color);
         width: 90%;
     }
 

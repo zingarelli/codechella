@@ -1,15 +1,7 @@
 :root {
-  /* Color palette - summer theme */
-  --summer-gradient: linear-gradient(#C8DEEF, #FBF0DD, #FACF9D);
-  --summer-dark-blue: #2E7BA2;
-  --summer-light-blue: #C8DEEF;
-  --summer-blue-hover: #519EC5;
-  --summer-mustard: #DF9010;
-  --summer-yellow: #FACF9D;
-
-  /* Color for texts */
-  --white: #FFF;
-  --dark-gray: #444444;
+  /* Colors */
+  --white: #FFFFFF;
+  --dark: #444444;
 
   /* Texts */
   --font-title: 'Calistoga', cursive;
@@ -20,7 +12,36 @@
   font-size: 20px;
   font-weight: 500;
   text-align: center;
-  color: var(--dark-gray);
+}
+
+/* Custom Theme colors: Summer */
+.summer {
+  --color-gradient: linear-gradient(#C8DEEF, #FBF0DD, #FACF9D);
+  --primary-color: #2E7BA2;
+  --secondary-color: #DF9010;
+  --hover-color: #519EC5;
+  --footer-color: #FACF9D;
+
+  /* Color for texts */
+  --text-color: var(--dark);
+
+  /* Default text color */
+  color: var(--text-color);
+}
+
+/* Custom Theme colors: Boreal */
+.boreal {
+  --color-gradient: linear-gradient(#304968, #36C1A0, #4650BD);
+  --primary-color: #4650BD;
+  --secondary-color: #008364;
+  --hover-color: #606ADA;
+  --footer-color: #4650BD;
+
+  /* Color for texts */
+  --text-color: var(--white);
+
+  /* Default text color */
+  color: var(--text-color);
 }
 
 body {
@@ -43,7 +64,7 @@ a {
 }
 
 main {
-  background: var(--summer-gradient);
+  background: var(--color-gradient);
   padding: 0 24px;
 }
 

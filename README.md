@@ -47,7 +47,7 @@ Componentes criados:
 
 - Header: renderiza o logo e o menu de links.
 - Footer: renderiza o logo, lista de links de redes sociais e texto copyright. Os itens são posicionados de maneira diferente a depender do tamanho da tela, e por isso utilizei o Grid para facilitar esse posicionamento
-- Banner: recebe como prop uma imagem e um texto, sendo o texto opcional. Quando o texto está presente, é adicionado um estilo à imagem para ficar mais opaca. 
+- Banner: recebe como prop uma imagem, uma posição para a imagem e um texto, sendo o texto opcional. Quando o texto está presente, é adicionado um estilo à imagem para ficar mais opaca. A imagem é usada para preencher o background, com a prop posição definindo seu posicionamento (center por padrão).
 - Article: renderiza uma imagem, um título e um conteúdo (que pode ser um texto, texto + botão, etc), recebidos via props. Ela possuia duas props adicionais para alteração de estilos:
     - imagePosition: informa em qual lado a imagem vai ser posicionada em relação ao texto (no topo, à esquerda ou à direita). O texto também é alinhado de acordo com a posição da imagem. Por padrão, fica à esquerda. Isso só irá afetar o layout para telas grandes (acima de 1024px). Telas menores terão sempre a imagem no topo e o texto abaixo, centralizado.
     - highlight: adicionei esta prop (boolean) pois o texto na página inicial possui alguns estilos diferentes (fica sempre centralizado e recebe um margin-bottom adicional). Considerei isto como um "artigo destacado" (highlighted). É false por padrão.
@@ -85,26 +85,11 @@ Componentes criados:
 
 Usei o [TinyPNG](https://tinypng.com) para comprimir as imagens.
 
+## Páginas criadas
+Home, Experiência, Mapa, NotFound e Template.
 
-## TODO
-Colocar um sublinhado no link que estiver ativo (página que estiver aberta).
-
-## CSS Variables
-/* Color palette - summer theme */
---summer-gradient: linear-gradient(#C8DEEF, #FBF0DD, #FACF9D);
---summer-dark-blue: #2E7BA2;
---summer-light-blue: #C8DEEF;
---summer-blue-hover: #519EC5;
---summer-mustard: #DF9010;
---summer-yellow: #FACF9D;
-
-/* Color for texts */
---white: #FFF;
---dark-gray: #444444;
-
-/* Texts */
---font-title: 'Calistoga', cursive;
---font-text: 'Raleway', sans-serif;
+## Features extras
+Opção de escolher entre os tema "Summer" e "Boreal", localizada no final do footer. Cada tema aplica uma paleta de cores diferente ao site. Para isso, utilizei da Context API, alterando dinamicamente as variáveis CSS que aplicam as cores aos elementos.
 
 ## Instalação
 

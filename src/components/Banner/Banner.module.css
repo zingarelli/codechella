@@ -10,14 +10,22 @@
     Adding opacity only to the background image.
     Tutorial: https://coder-coder.com/background-image-opacity/
 */
-.banner__opacity::before {
+.opacity__summer::before,
+.opacity__boreal::before {
     content: '';
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+}
+
+.opacity__summer::before {
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+.opacity__boreal::before {
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .banner__text {

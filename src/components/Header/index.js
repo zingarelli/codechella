@@ -9,7 +9,7 @@ export default function Header() {
     }
     
     return (
-        <header className={styles.header__container}>
+        <header className={styles.header__container}>            
             <Link to='/' onClick={closeMenu}>
                 <img src={logo} alt="Logo do Festival CodeChella" />
             </Link>
