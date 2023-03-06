@@ -23,6 +23,11 @@ export default function Footer() {
     const twitter = theme === 'summer' ? twitterSummer : twitterBoreal;
     const whatsapp = theme === 'summer' ? whatsappSummer : whatsappBoreal;
 
+    const changeTheme = (newTheme) => {
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    }
+
     return (
         <footer className={styles.footer__container} >
             <img className={styles.footer__logo} src={logo} alt="Logo do Festival CodeChella" />
@@ -43,8 +48,8 @@ export default function Footer() {
             </div>
             <div className={styles.theme__container}>
                 <p>Alterar tema:</p>
-                <span onClick={() => setTheme('summer')} className={styles.theme__summer}>Summer</span>
-                <span onClick={() => setTheme('boreal')} className={styles.theme__boreal}>Boreal</span>
+                <span onClick={() => changeTheme('summer')} className={styles.theme__summer}>Summer</span>
+                <span onClick={() => changeTheme('boreal')} className={styles.theme__boreal}>Boreal</span>
             </div>
         </footer>
     )
