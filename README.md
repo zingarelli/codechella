@@ -1,8 +1,29 @@
-# This README is a working in progress 🚧
+# CodeChella Festival
 
-Right now, this README is a little Frankenstein, with loosely disconnected texts in Portuguese and English that I add while I'm developing the project. Please ignore it for now.
+[Click here to read the English version of this Readme](#credits)
 
-I'll update it with a clean and readable version when reaching certain project milestones. 
+Página do CodeChella: um festival de música alternativa para Devs!
+
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Festival CodeChella 2023**
+| :label: Tecnologias | React
+| :rocket: URL         | https://codechella-puce.vercel.app/
+| :fire: Desafio     | https://www.alura.com.br/challenges/front-end-6
+
+![](https://user-images.githubusercontent.com/19349339/223120722-e7754769-b82d-4497-8afd-68cb40c03a73.png#vitrinedev)
+
+## Créditos e Agradecimentos
+
+Este projeto é o resultado da minha participação na 6ª edição do Desafio de Front End da Alura. Por meio de uma abordagem de aprendizado baseado em desafios, nós colocamos nossos conhecimentos em ação resolvendo um desafio simulado em um projeto do mundo real, que inclui receber tasks via Trello e lidar com prazos para entrega. 
+
+O desafio foi proposto pela [**Alura**](https://www.alura.com.br), uma escola online de tecnologia, que disponibilizou os cards Trello semanalmente, bem como o layout das telas no Figma (que também incluiu a tipologia e paleta de cores).
+
+Existe toda uma equipe da Alura por trás do desafio, sendo nosso contato maior com a [**Mônica Hillman**](https://www.linkedin.com/in/monicamhillman/), instrutora de Front End, e o [**Lucas de Freitas Pereira**](https://br.linkedin.com/in/lucas-de-freitas-pereira-b89044192), que cuida de todas as comunidades no Discord da Alura. Meu muito obrigado aos dois e a toda equipe, tanto pelo desafio proposto quanto pelo suporte.
+
+Outro agradecimento vai para todo o **pessoal no Discord** que participou neste desafio, se ajudando mutuamente por meio do compartilhamento de dicas, códigos e respondendo a dúvidas. 
+
+O site do festival possui muitas imagens. Para deixar o carregamento mais rápido, usei o [TinyPNG](https://tinypng.com) para comprimir estas imagens.
 
 ## O desafio
 
@@ -26,40 +47,91 @@ Visando sua divulgação e a venda de ingressos, o festival deseja **implementar
 
 [Clique aqui](https://www.figma.com/file/xHLPBeA2ujaXbBjHMK9xh7/CodeChella-%7C-Challenge-I---Front-end-2023?node-id=) para acessar o modelo Figma para o site.
 
-## Technologies
+## Tecnologias
+
+As seguintes tecnologias foram utilizadas:
 
 - node v16.15.1;
 - npm v8.11.0;
 - React v18.2.0;
 - React Router v6.8.1;
 
-## Semana 1
+O projeto foi desenvolvido em React, utilizando-se das  funcionalidades abaixo:
+
+- CSS Modules;
+
+- React Router;
+
+- Context API;
+
+- Hooks: useState, useEffect, useContext;
+
+- localStorage.
+
+## Desenvolvimento
+
+Você pode [ver o projeto online clicando aqui](https://codechella-puce.vercel.app/).
 
 A cada semana é disponibilizado um Trello com as tarefas a serem realizadas.
 
-Para a primeira semana, é necessário desenvolver três telas (páginas): a página inicial, a página sobre a experiência proporcionada pelo festival e a página mostrando o mapa de setores. 
+Visando responsividade, as telas (páginas) foram feitas para se adaptar a três layouts diferentes: mobile (a partir de 320px), tablet (a partir de 768px) e desktop (a partir de 1024px). O desenvolvimento foi feito seguindo o conceito de *mobile-first*.
 
-O site possui dois temas: Verão e Boreal, cada um com uma paleta de cores diferentes. O projeto pode ser desenvolvido escolhendo um dos temas, e fica como *desafio* criar uma funcionalidade para que o usuário possa escolher qual tema utilizar na página, alterando-a dinamicamente com o tema escolhido.
+### Semana 1
 
-Visando responsividade, decidi utilizar o conceito de mobile-first para criar as páginas. Os tamanhos de tela considerados na hora de estilizar o layout foram: mobile (360px), tablet (768px) e desktop (1024px).
+Foram desenvolvidas as telas da página inicial, da página sobre a experiência e da página mostrando o mapa de setores. 
 
-Componentes criados:
+O site possui dois temas de cores: Verão (com cores mais quentes) e Boreal (com cores mais frias). No final do rodapé da tela há dois botões para que a pessoa escolha o tema que preferir, que é alterado dinamicamente. A escolha fica salva no *localstorage* do navegador. O Gif abaixo mostra a página inicial e os dois temas sendo aplicados: 
 
-- Header: renderiza o logo e o menu de links.
-- Footer: renderiza o logo, lista de links de redes sociais e texto copyright. Os itens são posicionados de maneira diferente a depender do tamanho da tela, e por isso utilizei o Grid para facilitar esse posicionamento
-- Banner: recebe como prop uma imagem, uma posição para a imagem e um texto, sendo o texto opcional. Quando o texto está presente, é adicionado um estilo à imagem para ficar mais opaca. A imagem é usada para preencher o background, com a prop posição definindo seu posicionamento (center por padrão).
-- Article: renderiza uma imagem, um título e um conteúdo (que pode ser um texto, texto + botão, etc), recebidos via props. Ela possuia duas props adicionais para alteração de estilos:
-    - imagePosition: informa em qual lado a imagem vai ser posicionada em relação ao texto (no topo, à esquerda ou à direita). O texto também é alinhado de acordo com a posição da imagem. Por padrão, fica à esquerda. Isso só irá afetar o layout para telas grandes (acima de 1024px). Telas menores terão sempre a imagem no topo e o texto abaixo, centralizado.
-    - highlight: adicionei esta prop (boolean) pois o texto na página inicial possui alguns estilos diferentes (fica sempre centralizado e recebe um margin-bottom adicional). Considerei isto como um "artigo destacado" (highlighted). É false por padrão.
-- Button: renderiza um botão, com um texto (props `children`) e uma pequena imagem, recebida via props.
-- LineUp: responsável por renderizar a lista de atrações, ele é composto por três componentes. Quebrei dessa forma, pois há pequenos detalhes de estilos que englobam diferentes partes dessa seção e consegui trabalhar melhor separando em três componentes
-    - LineUpWrapper: irá mostrar todas as atrações (que são o componente LineUpContent), separadas por data. Recebe um título via props;
-    - LineUpContent: renderiza um dia de atração e suas bandas (que são o componente LineUpLayer), também recebendo um título via props, que seria a data da atração; 
-    - LineUpLayer: é quem de fato renderiza a lista de bandas. Como visualmente as bandas podem ter um tamanho de fonte diferente, esse componente possui uma prop chamada "layer" que irá adicionar uma classe à banda, sendo essa classe responsável por estilizar o texto com o tamanho de fonte escolhido. Os valores para a prop layer são "`l1`, `l2`, `l3` e `l4`".
+![gif da página inicial no tema "verão" e depois no tema "boreal"](https://user-images.githubusercontent.com/19349339/223164957-7c098fb4-13e4-451b-a781-09998eda3e5c.gif)
 
-    - Exemplo de código de atração, mostrando como usar os três componentes:
 
-```js
+Visando o reúso de partes que são renderizadas de maneira semelhante, desenvolvi os componentes abaixo: 
+
+#### Banner
+
+Recebe via props uma imagem, uma posição para esta imagem (opciona) e um texto (opcional). Quando o texto está presente, é aplicada uma opacidade à imagem para que o texto fique destacado. 
+
+O banner é preenchido com a imagem utilizando-se a propriedade CSS `background`, por padrão centralizada. Esse posicionamento pode ser alterado por meio da prop `position`.
+
+#### Button
+
+Renderiza um botão, com um texto e uma imagem, recebidos via props. A imagem é um ícone decorativo opcional.
+
+#### Header
+
+Renderiza o logo e o menu de navegação. Na versão mobile, o menu é substituído por um "menu hambúrguer", que mostra os links de navegação ao ser clicado, como pode ser visto no gif abaixo: 
+
+![gif mostrando a animação ao abrir e fechar o menu](https://user-images.githubusercontent.com/19349339/223131758-1cdccfc1-529d-4638-bceb-130d752afa9c.gif)
+
+#### Footer
+
+Renderiza o logo, uma lista de links de redes sociais, um texto copyright, e os botões para escolha do tema. Todos estes itens são posicionados de maneira diferente a depender do tamanho da tela, e por isso utilizei o Grid para facilitar esse posicionamento.
+
+#### Article
+
+Renderiza uma imagem, um título e um conteúdo (que pode ser um texto, outra imagem, texto + botão, etc), todos recebidos via props. 
+
+Este foi um **componente que me deu muito trabalho**, pois ele é reutilizado em várias seções das telas, porém com posicionamentos, margens e alinhamentos variados. Exemplos: a imagem pode aparecer no lado esquerdo do texto, outras vezes no lado direto, ou ainda no topo; em algumas páginas, o título recebe uma margem maior para separá-lo do texto; o conteúdo do artigo pode estar centralizado, outras vezes alinhado à direita ou à esquerda; os estilos podem mudar a depender do tamanho da tela; etc. Segue abaixo uma imagem mostrando vários artigos em diferentes estilos: 
+
+![artigo mostrando imagens em posições diferentes e textos com alinhamentos diferentes](https://user-images.githubusercontent.com/19349339/223151912-28cfe1d0-82e0-45e8-b922-497c1b63d33e.png)
+
+Refiz diversas vezes este componente, tentando torná-lo o mais genérico possível para englobar todas essas mudanças de estilo, e isso virou uma dor de cabeça... No final, decidi por somente alterar a posição da imagem por meio de uma prop adicional: `imagePosition`. A imagem sempre fica no topo em telas mobile e tablet. Já para telas desktop, o posicionamento é feito por meio dessa prop (à esquerda do texto, por padrão). 
+
+Para o restante das alterações de estilo, eu decidi que caberia às páginas **"injetar" o CSS** para obter o layout desejado. Como utilizei o CSS modules, que aplica localmente o CSS em cada componente, essa "injeção" de CSS foi feita por meio da criação de uma `div` externa ao `<Article />` e então utilizando seletores CSS para chegar aos elementos desse componente e alterar seus estilos. Não tenho certeza se esta é a abordagem mais correta, mas foi a que decidi utilizar. 
+
+#### LineUp
+
+A página principal mostra uma lista com as bandas de cada dia do evento, que chamamos de *"lineup"*. As bandas são mostradas com certa "hierarquia", recebendo tamanho e peso de fontes diferentes. Para fazer essa renderização do lineup, decidi criar três componentes, para melhor trabalhar com a estilização:
+
+- LineUpWrapper: irá englobar todos os dias de atrações (que são componentes `<LineUpContent />`). Recebe um título via props;
+
+- LineUpContent: renderiza um dia de atração e suas bandas (que são componentes `<LineUpLayer />`), também recebendo um título via props, que seria a data da atração; 
+
+- LineUpLayer: é quem de fato renderiza as bandas, de acordo com sua "hierarquia". A prop `layer` adiciona uma classe à banda, definindo sua posição na hierarquia, e seus valores são "`l1`, `l2`, `l3` e `l4`".
+
+Segue um código para exemplificar o uso destes componentes: 
+
+```xml
 <LineUpWrapper title='/Line-Up/'>
     <LineUpContent title='SÁBADO <11/03>'>
         <LineUpLayer layer='l1'>
@@ -83,13 +155,32 @@ Componentes criados:
 </LineUpWrapper>
 ```
 
-Usei o [TinyPNG](https://tinypng.com) para comprimir as imagens.
+#### Páginas, Rotas e Contexto
 
-## Páginas criadas
-Home, Experiência, Mapa, NotFound e Template.
+O componente `<AppRoutes />` é o responsável por gerenciar as rotas e respectivas páginas.
 
-## Features extras
-Opção de escolher entre os tema "Summer" e "Boreal", localizada no final do footer. Cada tema aplica uma paleta de cores diferente ao site. Para isso, utilizei da Context API, alterando dinamicamente as variáveis CSS que aplicam as cores aos elementos.
+Todas as páginas possuem elementos em comum: um cabeçalho, um banner e um footer. Por isso, eu criei um componente `<PageTemplate />` e fiz uso de rotas aninhadas para compartilhar um mesmo padrão de página entre elas. Dentro desse componente, no entanto, coloquei somente os componentes `<Header />` e `<Footer />`, pois o banner tem uma imagem e texto diferentes em cada página, ficando sob responsabilidade da página adicionar e configurar seu `<Banner />`.
+
+Além das três páginas solicitadas, também criei uma página padrão para rotas inexistentes (a famosa "página 404").
+
+Para lidar com os dois temas que podem ser aplicados ao site ("Verão" e "Boreal"), criei um contexto `<ThemeContext />` e um provider `<ThemeProvider />`. O provider possui uma variável de estado `theme`, que pode ser acessada pelas páginas e componentes para renderizarem de acordo com o tema atual. O `<Footer />` também acessa `setTheme` para modificar o tema.
+
+O resultado final das rotas é mostrado no código abaixo: 
+
+```xml
+<BrowserRouter>
+    <ThemeProvider>
+        <Routes>
+            <Route path="/" element={<PageTemplate />}>
+                <Route index element={<Home />} />
+                <Route path="experiencia" element={<Experiencia />} />
+                <Route path="mapa" element={<Mapa />} />
+                <Route path="*" element={<NotFound />} />
+            </Route>
+        </Routes>
+    </ThemeProvider>
+</BrowserRouter>
+```
 
 ## Instalação
 
@@ -104,6 +195,11 @@ Após isso, você pode rodar a aplicação em modo de desenvolvimento com o segu
     npm start
 A aplicação irá rodar no endereço http://localhost:3000.
 
+---
+
+## Credits
+
+The README in English is a working in progress 🚧
 
 ## Instalation
 
@@ -120,76 +216,3 @@ After that, you can run the app in the development mode with the following comma
     npm start
 
 The app will run at http://localhost:3000.
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
