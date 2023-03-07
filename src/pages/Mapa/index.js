@@ -11,7 +11,7 @@ export default function Mapa() {
     return (
         <>
             <Banner image={banner} text='Mapa de Setores' position='bottom' />
-            <main>
+            <main className={styles.main}>
                 <div className={styles.mapa}>
                     <Article
                         image={mapa}
