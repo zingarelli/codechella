@@ -1,0 +1,41 @@
+.accordion__container {
+    padding-bottom: 8px;
+}
+
+.accordion__title {
+    color: var(--white);
+    background-color: var(--primary-color);
+    width: 100%;
+    font: 700 1.6rem/38px var(--font-text);
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion__title::after {
+    content: '';
+    background: url('./arrow_drop_down.png') no-repeat;
+    width: 23px;
+    height: 7px;
+    margin-left: 10px;
+}
+
+.accordion__title:hover {
+    background-color: var(--hover-color);
+}
+
+.accordion__content {
+    color: var(--dark);
+    background-color: var(--light-blue);
+    padding: 16px;
+    text-align: left;
+}
+
+.accordion__content a {
+    color: var(--dark);
+    font-weight: 500;
+    text-decoration: underline;
+}
