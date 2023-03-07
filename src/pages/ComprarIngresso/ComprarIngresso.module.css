@@ -1,0 +1,19 @@
+.ticket__container {
+    padding: 32px 24px;
+}
+
+.ticket__title {
+    font: 400 1.6rem/42px var(--font-title);
+    margin-bottom: 48px;
+}
+
+@media screen and (min-width: 768px) {
+    .ticket__container {
+        padding: 48px 60px;
+    }
+    
+    .ticket__title {
+        font-size: 2.4rem;
+        line-height: 62px;
+    }
+}

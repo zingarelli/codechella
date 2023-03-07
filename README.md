@@ -25,6 +25,8 @@ Outro agradecimento vai para todo o **pessoal no Discord** que participou neste 
 
 O site do festival possui muitas imagens. Para deixar o carregamento mais rápido, usei o [TinyPNG](https://tinypng.com) para comprimir estas imagens.
 
+Na página 404, eu mostro a foto aleatória de um gatinho. Essa foto vem do site [Cataas (Cat as a service)](https://cataas.com/#/).
+
 ## O desafio
 
 O **CodeChella** é um festival de música alternativa que acontece anualmente, é composto por gêneros diversos e visa promover uma experiência encantadora e inesquecível para o visitante, proporcionando uma integração multicultural e social. 
@@ -181,6 +183,25 @@ O resultado final das rotas é mostrado no código abaixo:
     </ThemeProvider>
 </BrowserRouter>
 ```
+
+### Semana 2
+
+Para esta semana serão feitas as páginas de informações, compra de ingresso e visualização de Ingresso. Por enquanto, será feito somente a parte estática das páginas (seus conteúdos e estilos). A parte de interação e tráfego de informações ficará para a próxima spring.
+
+#### Componentes novos
+
+- Accordion: renderiza um título e um conteúdo, recebidos via props. No próximo sprint, haverá uma interação com este componente, em que inicialmente somente o título ficará visível, e o conteúdo será mostrado ao clicar no título.
+
+- Form: renderiza os campos que precisam ser preenchidos para "comprar" um ingresso e um botão
+
+#### Páginas novas
+
+- Info
+- Compra de Ingresso
+
+## Todo 
+
+mix-blend-mode: multiply;
 
 ## Instalação
 

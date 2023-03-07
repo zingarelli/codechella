@@ -25,7 +25,7 @@ export default function Header() {
                         <li><NavLink to='experiencia' onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.active}` : undefined} >A experiência</NavLink></li>
                         <li><NavLink to='mapa' onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.active}` : undefined} >Mapa de Setores</NavLink></li>
                         <li><NavLink to='info' onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.active}` : undefined} >Informações</NavLink></li>
-                        <li><NavLink to='ingresso' onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.active}` : undefined} >Ingresso</NavLink></li>
+                        <li><NavLink to='ingresso/comprar' onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.active}` : undefined} >Ingresso</NavLink></li>
                     </ul>
                 </nav>
             </div>

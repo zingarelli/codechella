@@ -1,4 +1,5 @@
 import { ThemeProvider } from "context/Theme";
+import ComprarIngresso from "pages/ComprarIngresso";
 import Experiencia from "pages/Experiencia";
 import Home from "pages/Home";
 import Info from "pages/Info";
@@ -17,6 +18,7 @@ function AppRoutes() {
             <Route path="experiencia" element={<Experiencia />} />
             <Route path="mapa" element={<Mapa />} />
             <Route path="info" element={<Info />} />
+            <Route path="ingresso/comprar" element={<ComprarIngresso />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
