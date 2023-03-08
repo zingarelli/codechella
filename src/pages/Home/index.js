@@ -18,12 +18,10 @@ export default function Home() {
     const banner = theme === 'summer' ? carousel : boreal;
     const articleImg = theme === 'summer' ? fans : band;
     const bottomBanner = theme === 'summer' ? festival : guitar;
-    
+
     return (
         <>
-            <div>
-                <Banner image={banner} text="Boas-vindas ao #CodeChella2023!" />
-            </div>
+            <Banner image={banner} text="Boas-vindas ao #CodeChella2023!" />
             <main className={styles.main__container}>
                 <Article
                     image={articleImg}
