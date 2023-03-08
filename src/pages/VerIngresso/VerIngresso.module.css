@@ -1,0 +1,21 @@
+.container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.message {
+    font: 700 1.6rem/38px var(--font-text);
+    margin-bottom: 32px;
+}
+
+@media screen and (min-width: 1024px) {
+    .ticket {
+        width: 60vw;
+        margin: 0 auto;
+    }
+    
+    .message>p {
+        display: inline;
+        margin-left: 8px;
+    }
+}

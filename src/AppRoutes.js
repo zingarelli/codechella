@@ -6,6 +6,7 @@ import Info from "pages/Info";
 import Mapa from "pages/Mapa";
 import NotFound from "pages/NotFound";
 import PageTemplate from "pages/PageTemplate";
+import VerIngresso from 'pages/VerIngresso';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function AppRoutes() {
@@ -19,6 +20,7 @@ function AppRoutes() {
             <Route path="mapa" element={<Mapa />} />
             <Route path="info" element={<Info />} />
             <Route path="ingresso/comprar" element={<ComprarIngresso />} />
+            <Route path="ingresso/ver" element={<VerIngresso />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
