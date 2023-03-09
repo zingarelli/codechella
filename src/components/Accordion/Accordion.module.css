@@ -1,5 +1,6 @@
 .accordion__container {
-    padding-bottom: 8px;
+    margin-bottom: 8px;
+    transition: margin-bottom .1s .1s;
 }
 
 .accordion__title {
@@ -30,12 +31,18 @@
 .accordion__content {
     color: var(--dark);
     background-color: var(--light-blue);
-    padding: 16px;
-    text-align: left;
+    overflow: hidden;
+    height: 0;
+    transition: height .3s linear;
 }
 
 .accordion__content a {
     color: var(--dark);
     font-weight: 500;
     text-decoration: underline;
+}
+
+.content__container {
+    text-align: left;
+    padding: 16px;
 }
