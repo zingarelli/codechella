@@ -1,6 +1,6 @@
 # CodeChella Festival
 
-[Click here to read the English version of this Readme](#credits)
+[Click here to read the English version of this Readme](#credits-and-acknowledgment)
 
 Página do CodeChella: um festival de música alternativa para Devs!
 
@@ -66,7 +66,7 @@ O projeto foi desenvolvido em React, utilizando-se das  funcionalidades abaixo:
 
 - Context API;
 
-- Hooks: useState, useEffect, useContext;
+- Hooks: useState, useEffect, useContex, useNavigate;
 
 - localStorage.
 
@@ -85,7 +85,6 @@ Foram desenvolvidas as telas da página inicial, da página sobre a experiência
 O site possui dois temas de cores: Verão (com cores mais quentes) e Boreal (com cores mais frias). No final do rodapé da tela há dois botões para que a pessoa escolha o tema que preferir, que é alterado dinamicamente. A escolha fica salva no *localstorage* do navegador. O Gif abaixo mostra a página inicial e os dois temas sendo aplicados: 
 
 ![gif da página inicial no tema "verão" e depois no tema "boreal"](https://user-images.githubusercontent.com/19349339/223164957-7c098fb4-13e4-451b-a781-09998eda3e5c.gif)
-
 
 Visando o reúso de partes que são renderizadas de maneira semelhante, desenvolvi os componentes abaixo: 
 
@@ -233,9 +232,90 @@ A aplicação irá rodar no endereço http://localhost:3000.
 
 ---
 
-## Credits
+## Credits and Acknowledgment
 
-The README in English is a working in progress 🚧
+This project is the result of my participation in the 6th edition of "Alura Front End Challenges". By using a challenge-based learning approach, we put our knowledge in action by solving a challenge, which simulates a real-world project, with tasks in Trello and due dates for project's milestones.
+
+This challenge is proposed by [**Alura**](https://www.alura.com.br), a brazilian online school of technology. They provided the layout of each page, typology and color palette in a Figma file, as well as weekly assignments in Trello.
+
+There a whole team of Alura's staff behind this challenge, but our main point of contact was with [**Mônica Hillman**](https://www.linkedin.com/in/monicamhillman/), Front End instructor, and [**Lucas de Freitas Pereira**](https://br.linkedin.com/in/lucas-de-freitas-pereira-b89044192), community manager on Discord. My sincere thanks to both and the entire team for this challenge and all the support we've received.
+
+Another thanks goes out to all the other **participants on Discord**, each week mutually helping each other by sharing tips, codes and answering questions.
+
+This project has several images. In order to load them faster, I've used [TinyPNG](https://tinypng.com) for image compression.
+
+There's a 404 page in which I show a random cat pic. I've used [Cataas (Cat as a service)](https://cataas.com/#/) to get those pics.
+
+## About the Challenge
+
+**CodeChella** is an annual alternative music festival, bringing bands of different music genres, aiming to promote a pleasant and unforgettable experience for its visitors, providing a multicultural and social integration.
+
+In order to promote the festival in Brazil and sell tickets, the organizing team wants to **create a website** with the following pages (in portuguese):
+
+- Home page showing all the bands that will perform in the festival;
+
+- A page to explain the experience, showing the various stages of the festival;
+
+- A page showing the map of the available sectors to purchase a ticket;
+
+- A FAQ page;
+
+- A page to fill out a form to purchase a ticket;
+
+- A page showing the virtual ticket.
+
+**Note:** it's very important that the website is **responsive**, so users can easily view and buy tickets using their phones.
+
+You can [click here](https://www.figma.com/file/xHLPBeA2ujaXbBjHMK9xh7/CodeChella-%7C-Challenge-I---Front-end-2023?node-id=) to access the Figma file created for this website.
+
+## Technologies
+
+The following technologies have been used:
+
+- node v16.15.1;
+- npm v8.11.0;
+- React v18.2.0;
+- React Router v6.8.1;
+
+This project was developed in React, using the features below::
+
+- CSS Modules;
+
+- React Router;
+
+- Context API;
+
+- Hooks: useState, useEffect, useContex, useNavigate;
+
+- localStorage.
+
+## Development
+
+You can check the website online (in Portuguese) [clicking here](https://codechella-puce.vercel.app/).
+
+New assignments are provided every week in Trello.
+
+Aiming responsiveness, the pages were developed to adapt to three different layouts, based on the devices they'll be rendered: mobile (from 320px wide), tablet (from 768px wide) and desktop (from 1024px wide). The development was based on a *mobile-first* approach.
+
+### Week 1
+
+I've developed three pages: home page, experience page and sectors page. I've also created a 404 page, in which I show a random picture of a cute cat 😸, so that the user don't feel sad for reaching an non-existing page.
+
+The website has two color themes: Summer (with warm colors) and Boreal (with a cold color palette). At the end of the footer there are two buttons for the user to choose which theme they prefer. Themes are dynamically changed and the user's preference is saved on the browser's *localstorage*. The following gif shows the home page using the two themes:
+
+![gif showing the home page using "Summer" theme and then "Boreal" theme](https://user-images.githubusercontent.com/19349339/223164957-7c098fb4-13e4-451b-a781-09998eda3e5c.gif)
+
+In order to reuse sections that are rendered in a similar way, I've developed several components and a template for a page. I've also used React Router to deal with page navigation and the SPA (single-page application) approach. The theme is shared to all pages using Context API.
+
+### Week 2
+
+I've continued developing the rest of the pages: FAQ page, form page and ticket page. For now, I've focused on the visual part of the pages, including their content and styles. User interaction with elements of the page, as well as how the data in the form will be shared with other pages, will be developed in the following weeks.
+
+Having developed so many components, routes and a page template in the previous week helped me easily create the new pages, with the need of only creating three new components to deal with specific sections: the form, the FAQ section and the card to show a ticket.
+
+### Week 3
+
+Under construction... 🚧
 
 ## Instalation
 
