@@ -186,22 +186,37 @@ O resultado final das rotas é mostrado no código abaixo:
 
 ### Semana 2
 
-Para esta semana serão feitas as páginas de informações, compra de ingresso e visualização de Ingresso. Por enquanto, será feito somente a parte estática das páginas (seus conteúdos e estilos). A parte de interação e tráfego de informações ficará para a próxima spring.
+O sprint da semana 2 continua o desenvolvimento do restante das páginas do festival: página de informações, formulário para obter um ingresso, e visualização do ingresso obtido. Por enquanto, o foco é na parte visual das páginas, incluindo seus conteúdos e estilos. A  interação com elementos da página, bem como o tráfego de informações registradas no formulário, ficarão para a próxima sprint.
 
-#### Componentes novos
+Durante o sprint anterior, foram feitas a estruturação das rotas, criação de contexto e de variáveis CSS para alterar o tema, além a criação de componentes e templates comuns a cada página. Isso auxiliou muito no andamento e na produtividade desta sprint atual, facilitando a criação das novas páginas e reúso dos componentes já existentes. Ainda assim, três novos componentes foram criados para atender seções específicas, como um formulário, uma seção de perguntas e respostas, e um card mostrando as informações de um ingresso obtido.
 
-- Accordion: renderiza um título e um conteúdo, recebidos via props. No próximo sprint, haverá uma interação com este componente, em que inicialmente somente o título ficará visível, e o conteúdo será mostrado ao clicar no título.
+Segue abaixo detalhes sobre os novos componentes:
 
-- Form: renderiza os campos que precisam ser preenchidos para "comprar" um ingresso e um botão
+#### Accordion
 
-#### Páginas novas
+Renderiza um título e um conteúdo, recebidos via props. Este componente é utilizado múltiplas vezes na seção de "Perguntas Frequentes", em que inserimos uma pergunta no título e a respectiva resposta no conteúdo. O título na verdade é um botão que, quando clicado, irá revelar o conteúdo da resposta. Essa interação, no entanto, será implementada no próximo sprint. Por hora, tanto a pergunta quanto sua resposta estão visíveis.
 
-- Info
-- Compra de Ingresso
+![Exemplo do componente Accordion, mostrando uma pergunta na primeira linha e respectiva resposta abaixo da pergunta](https://user-images.githubusercontent.com/19349339/224023350-7d40ce05-d384-43e9-9a06-41a28567686e.png)
 
-## Todo 
+#### Form
 
-mix-blend-mode: multiply;
+Renderiza os campos do formulário (nome, e-mail, setor desejado e data de nascimento) e um botão para salvar os dados. Todos os campos são obrigatórios. 
+
+No começo, pensei em tratar cada campo como um outro componente, para facilitar o reúso. No entanto, como esta é a única página que possui um formulário, e por se tratar de somente 4 campos, decidir manter tudo dentro do componente `<Form />`. Somente o botão está reutilizando o componente `<Button />`, desenvolvido na sprint anterior.
+
+O componente recebe via props uma função `onSubmit`, tirando do `<Form />` a responsabilidade de implementar o evento de envio do formulário, deixando essa responsabilidade para a página que utilizar o componente. No caso do projeto, a responsabilidade é da página de compra de ingresso. Por hora, está implementado somente o redirecionamento para a página de visualização do ingresso. No próximo sprint precisarei criar as variáveis de estado e decidir sobre a necessidade de criar um contexto para trafegar estes dados, de modo a preencher dinamicamente o ingresso. 
+
+#### Ticket
+
+Este componente vai renderizar um cartão com todas as informações preenchidas no formulário, além de dados do evento e um QR Code, funcionando como um "ingresso virtual". 
+
+Por enquanto, o conteúdo do ingresso está estático, servindo apenas de exemplo sobre como ele deve ficar. No próximo sprint, o conteúdo deverá ser preenchido com os dados recebidos do formulário.
+
+![Exemplo de ingresso, mostrando um QR Code na primeira linha e, nas linhas seguintes, o nome, tipo de ingresso, setor do festival, data e local](https://user-images.githubusercontent.com/19349339/224027407-547de7a0-1ed4-4744-9b08-f440e65ebeb3.png)
+
+### Semana 3
+
+Vem aí...
 
 ## Instalação
 
