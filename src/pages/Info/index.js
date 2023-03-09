@@ -17,7 +17,7 @@ export default function Info() {
                     <Accordion title='Qual é a classificação etária?' >
                         <p>A partir de 16 anos, todo mundo pode entrar. De 13 a 15 anos, tem que estar acompanhado dos pais ou responsáveis legais. Menores de 10 anos não podem entrar.</p>
                     </Accordion>
-                    <Accordion title='Quais são os setores disponíveis??' >
+                    <Accordion title='Quais são os setores disponíveis?' >
                         <ul>
                             <li>Pista Premium</li>
                             <li>Pista Comum</li>

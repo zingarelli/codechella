@@ -21,6 +21,7 @@ export default function Form({ onSubmit }) {
                     <option value="commom">Pista Comum</option>
                     <option value="floor">Cadeiras Térreo</option>
                     <option value="top">Cadeiras Superiores</option>
+                    <option value="top">Rampas</option>
                 </select>
             </div>
             <div className={styles.form__field}>
