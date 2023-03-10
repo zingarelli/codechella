@@ -14,18 +14,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    column-gap: 10px
+}
+
+.accordion__title:hover {
+    background-color: var(--hover-color);
 }
 
 .accordion__title::after {
     content: '';
     background: url('./arrow_drop_down.png') no-repeat;
-    width: 23px;
+    min-width: 14px;
     height: 7px;
-    margin-left: 10px;
+    transform: rotate(180deg);
+    transition: transform .3s linear;
+    transform-origin: center;
 }
 
-.accordion__title:hover {
-    background-color: var(--hover-color);
+.accordion__opened::after {
+    transform: rotate(0);    
 }
 
 .accordion__content {
