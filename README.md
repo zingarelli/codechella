@@ -66,7 +66,9 @@ O projeto foi desenvolvido em React, utilizando-se das  funcionalidades abaixo:
 
 - Context API;
 
-- Hooks: useState, useEffect, useContex, useNavigate;
+- forwardRef API;
+
+- Hooks: useState, useEffect, useContex, useNavigate, useRef;
 
 - localStorage.
 
@@ -213,9 +215,42 @@ Por enquanto, o conteúdo do ingresso está estático, servindo apenas de exempl
 
 ![Exemplo de ingresso, mostrando um QR Code na primeira linha e, nas linhas seguintes, o nome, tipo de ingresso, setor do festival, data e local](https://user-images.githubusercontent.com/19349339/224027407-547de7a0-1ed4-4744-9b08-f440e65ebeb3.png)
 
-### Semana 3
+### Semanas 3 e 4
 
-Vem aí...
+O último sprint do projeto é dedicado às interações da pessoa usuária com as páginas do site. As seguintes interações foram implementadas:
+
+#### Accordion
+
+Na página de Informações, a seção de "Perguntas Frequentes" deve mostrar somente as perguntas. As respostas são exibidas ao clicar em uma pergunta. Um elemento com esse comportamento é o que se chama de "Accordion", cujo componente já havia sido criado no sprint anterior. 
+
+Implementei o comportamento de exibir/esconder as respostas e também adicionei uma animação à flecha que fica ao lado da pergunta: ela rotaciona quando o componente "abre" ou "fecha", como forma de dica visual à pesssoa usuária.
+
+#### Validação de formulário
+
+As seguintes validações foram aplicadas ao formulário da tela de compra de ingresso, utilizando as propriedades que o próprio HTML fornece para validar campos:
+
+- Nome: obrigatório e necessário um mínimo de 5 caracteres;
+
+- E-mail: obrigatório e necessário estar em um formato válido para e-mails;
+
+- Tipo de Ingresso: obrigatório selecionar uma opção;
+
+- Data de nascimento: obrigatória e deve respeitar a seguinte regra: "a partir de 16 anos, todo mundo pode entrar. De 10 a 15 anos, tem que estar acompanhado dos pais ou responsáveis legais. Menores de 10 anos não podem entrar".
+
+    - A validação da idade foi feita utilizando JavaScript no evento de onChange da data de nascimento. Quando a pessoa é menor de 10 anos, o botão de submeter o formulário é desabilitado e ganha uma cor diferente para indicar isso. Quando a pessoa possui entre 10 e 15 anos, um campo de checkbox é exibido, sendo obrigatório que a pessoa marque a confirmação de que estará acompanhada dos pais ou responsáveis legais.
+
+#### A serem implementadas
+- Armazenamento das informações do formulário;
+
+- Visualização do ingresso com as informações enviadas via formulário;
+
+- Personalize o projeto da forma que quiser!
+
+    - Adicionar testes unitários
+
+## TODO
+- Ver no Discord se faz sentido a regra dos menores de 10 anos e depois maiores de 13 anos. Não deveria ser entre 10 e 15 o consentimento?
+- fazer gif da validação da data de nascimento;
 
 ## Instalação
 
@@ -285,7 +320,9 @@ This project was developed in React, using the features below::
 
 - Context API;
 
-- Hooks: useState, useEffect, useContex, useNavigate;
+- forwardRef API;
+
+- Hooks: useState, useEffect, useContex, useNavigate, useRef;
 
 - localStorage.
 
