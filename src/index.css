@@ -2,7 +2,10 @@
   /* Colors */
   --white: #FFFFFF;
   --dark: #444444;
+  --light-dark: #a1a1a1;
   --light-blue: #C8DEEF;
+  --green: #36C1A0;
+  --red: #fa4b4b;
 
   /* Texts */
   --font-title: 'Calistoga', cursive;
