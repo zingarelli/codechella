@@ -1,3 +1,10 @@
+.form__info {
+    text-align: left;
+    font-style: italic;
+    font-size: .9rem;
+    margin-bottom: 12px;
+}
+
 .form__field {
     margin-bottom: 32px;
     display: flex;
@@ -21,10 +28,30 @@
     box-sizing: border-box;
 }
 
+.form__input:valid {
+    border: 2px solid var(--green);
+}
+
+.form__checkbox, 
+.form__forbidden {
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.form__forbidden {
+    color: var(--red);
+}
+
 .form__button button {
     width: fit-content;
     padding: 8px 16px;
     margin: 0 auto;
+}
+
+.form__button button:disabled {
+    background-color: var(--light-dark);
+    box-shadow: none;
+    cursor: not-allowed;
 }
 
 @media screen and (min-width: 1024px) {
@@ -36,9 +63,10 @@
         column-gap: 24px;
     }
 
-    .form__field:nth-child(1),
-    .form__field:nth-child(2), 
-    .form__button {
+    div.form__field:nth-of-type(-n+2), 
+    .form__button,
+    .form__checkbox,
+    .form__container>p {
         /* start-column-line / end-column-line */
         grid-column: 1 / 3;
     }
