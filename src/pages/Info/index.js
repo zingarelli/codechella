@@ -15,7 +15,7 @@ export default function Info() {
                         <p>Teremos dois dias de shows, o primeiro (11/03) com bandas de rock, e o segundo (12/03) com bandas pop. <Link to={'/'}>Confira o line-up em detalhes clicando neste link!</Link></p>
                     </Accordion>
                     <Accordion title='Qual é a classificação etária?' >
-                        <p>A partir de 16 anos, todo mundo pode entrar. De 13 a 15 anos, tem que estar acompanhado dos pais ou responsáveis legais. Menores de 10 anos não podem entrar.</p>
+                        <p>A partir de 16 anos, todo mundo pode entrar. De 10 a 15 anos, tem que estar acompanhado dos pais ou responsáveis legais. Menores de 10 anos não podem entrar.</p>
                     </Accordion>
                     <Accordion title='Quais são os setores disponíveis?' >
                         <ul>
