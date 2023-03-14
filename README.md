@@ -27,6 +27,8 @@ O site do festival possui muitas imagens. Para deixar o carregamento mais rápid
 
 Na página 404, eu mostro a foto aleatória de um gatinho. Essa foto vem do site [Cataas (Cat as a service)](https://cataas.com/#/).
 
+Na página de Perguntas Frequentes, o conteúdo da resposta é mostrado ao clicar na pergunta. Isso é chamado de "accordion". Aprendi a fazer o efeito de exibir/esconder o conteúdo [neste artigo da W3Schools](https://www.w3schools.com/howto/howto_js_accordion.asp).
+
 ## O desafio
 
 O **CodeChella** é um festival de música alternativa que acontece anualmente, é composto por gêneros diversos e visa promover uma experiência encantadora e inesquecível para o visitante, proporcionando uma integração multicultural e social. 
@@ -215,7 +217,19 @@ Por enquanto, o conteúdo do ingresso está estático, servindo apenas de exempl
 
 ### Semana 3
 
-Vem aí...
+Fiz a animação para mostrar/esconder a resposta de cada `<Accordion />` por meio da alteração da altura da div que contém a resposta. Inicialmente, tentei fazer utilizando uma variável de estado com `useState`, usando ela para alterar dinamicamente a classe do conteúdo, e então estilizar o `height` em cada classe. No entanto, para animar a altura eu devo especificar um valor para ela (`height: auto` não funciona), então eu precisava passar ao arquivo CSS a altura correta. 
+
+O valor da altura de um elemento pode ser obtido com a propriedade `scrollHeight`, mas eu não sei se é possível passar valores do JSX para um arquivo CSS. No final, eu decidi alterar a altura via CSS inline, e também estilizar outros elementos inline (um `margin-bottom` maior no componente e uma rotação na imagem de triângulo presente no título). Com isso, acabei por não utilizar o `useState`. 
+
+Segue abaixo gif mostrando um componente `<Accordion />` abrindo e fechando conforme é clicado no seu título.
+
+![Gif mostrando um componente Accordion inicialmente fechado, com seu conteúdo sendo revelado após clicar no título, e fechando ao ser clicado novamente](https://user-images.githubusercontent.com/19349339/224329647-b955efa0-fe8f-4541-acea-0245240db10a.gif)
+
+## TODO
+
+Ver a possibilidade de usar useRef() no Accordion para selecionar os elementos a serem atualizados.
+
+Aplicar testes unitários simples aos componentes, caso sobre tempo nas últimas semanas.
 
 ## Instalação
 
@@ -245,6 +259,8 @@ Another thanks goes out to all the other **participants on Discord**, each week 
 This project has several images. In order to load them faster, I've used [TinyPNG](https://tinypng.com) for image compression.
 
 There's a 404 page in which I show a random cat pic. I've used [Cataas (Cat as a service)](https://cataas.com/#/) to get those pics.
+
+In the FAQ page, content for the asnwer is displayed when one clicks on the question. This is called "accordion". I've learned how to hide/show content [in this article of W3Schools](https://www.w3schools.com/howto/howto_js_accordion.asp).
 
 ## About the Challenge
 
