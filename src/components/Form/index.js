@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 export default function Form({ onSubmit }) {
     const [ageStatus, setAgeStatus] = useState(null);
     const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [ticket, setTicket] = useState({});
     const buttonRef = useRef(null); // reference to the button, so it can be disabled if needed
 
     useEffect(() => {
@@ -37,29 +38,61 @@ export default function Form({ onSubmit }) {
             setAgeStatus('forbidden');
             setButtonDisabled(true);
             e.target.setCustomValidity('Pessoa menor de 10 anos');
-        } else if (age >= 10 && age <= 15) {
-            setAgeStatus('consentment');
-            setButtonDisabled(false);
         } else {
-            setAgeStatus(null);
+            if (age >= 10 && age <= 15) {
+                setAgeStatus('consentment');
+                setTicket(oldState => ({...oldState, consentment: true}));
+            } else {
+                setAgeStatus(null);
+            }
             setButtonDisabled(false);
+            setTicket(oldState => ({...oldState, age}));
+            e.target.setCustomValidity('');
         }
     }
 
+    // get the content of a selected option and update ticket 
+    const setTicketSector = (e) => {
+        const selected = e.target.options[e.target.selectedIndex].text;
+        setTicket(oldState => ({...oldState, sector: selected}));
+    }
+
     return (
-        <form className={styles.form__container} onSubmit={onSubmit} >
+        <form className={styles.form__container} onSubmit={(e) => onSubmit(e, ticket)} >
             <p className={styles.form__info}>Todos os campos são obrigatórios</p>
             <div className={styles.form__field}>
                 <label htmlFor="nome" className={styles.form__label}>Nome Completo:</label>
-                <input required minLength={5} id="nome" name="nome" className={styles.form__input} />
+                <input 
+                    required 
+                    minLength={5} 
+                    id="nome" 
+                    name="nome" 
+                    className={styles.form__input} 
+                    value={ticket.name || ''}
+                    onChange={(e) => setTicket(oldState => ({...oldState, name: e.target.value}))}
+                />
             </div>
             <div className={styles.form__field}>
                 <label htmlFor="email" className={styles.form__label}>Email:</label>
-                <input required id="email" name="email" type='email' className={styles.form__input} />
+                <input 
+                    required 
+                    id="email" 
+                    name="email" 
+                    type='email' 
+                    className={styles.form__input} 
+                    value={ticket.email || ''}
+                    onChange={(e) => setTicket(oldState => ({...oldState, email: e.target.value}))}
+                />
             </div>
             <div className={styles.form__field}>
                 <label htmlFor="tipo" className={styles.form__label}>Tipo de ingresso:</label>
-                <select required name="tipo" id="tipo" className={styles.form__input}>
+                <select 
+                    required 
+                    name="tipo" 
+                    id="tipo" 
+                    className={styles.form__input}
+                    onChange={setTicketSector}
+                >
                     <option value="">Tipo de ingresso</option>
                     <option value="premium">Pista Premium</option>
                     <option value="commom">Pista Comum</option>

@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 export default function ComprarIngresso() {
     const navigate = useNavigate();
 
-    const purchaseTicket = (e) => {
+    const purchaseTicket = (e, ticket) => {
         e.preventDefault();
         navigate('/ingresso/ver');
+        localStorage.setItem('ticket', JSON.stringify(ticket));
     }
     
     return (
