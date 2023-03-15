@@ -9,8 +9,8 @@ export default function ComprarIngresso() {
 
     const purchaseTicket = (e, ticket) => {
         e.preventDefault();
-        navigate('/ingresso/ver');
         localStorage.setItem('ticket', JSON.stringify(ticket));
+        navigate('/ingresso/ver');
     }
     
     return (

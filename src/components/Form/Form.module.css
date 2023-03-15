@@ -32,7 +32,35 @@
     border: 2px solid var(--green);
 }
 
-.form__checkbox, 
+.form__fieldset {
+    border: 1px solid var(--text-color);
+    width: 100%;
+    padding: 0 20px 12px;
+    box-sizing: border-box;
+}
+
+.form__days {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.form__days *, 
+.form__consentment * {
+    cursor: pointer;
+}
+
+.form__days input,
+.form__consentment input {
+    width: 16px;
+    height: 16px;
+}
+
+.form__consentment input {
+    margin-right: 5px;
+}
+
+.form__consentment, 
 .form__forbidden {
     text-align: left;
     margin-bottom: 32px;
@@ -63,9 +91,9 @@
         column-gap: 24px;
     }
 
-    div.form__field:nth-of-type(-n+2), 
+    div.form__field:nth-of-type(-n+3),
     .form__button,
-    .form__checkbox,
+    .form__consentment,
     .form__container>p {
         /* start-column-line / end-column-line */
         grid-column: 1 / 3;
