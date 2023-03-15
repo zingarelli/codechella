@@ -6,7 +6,7 @@ import qrCode from './assets/qr-code.png';
 import { useContext } from 'react';
 import { ThemeContext } from 'context/Theme';
 
-export default function Ticket() {
+export default function Ticket({ ticket }) {
     const { theme } = useContext(ThemeContext);
     const logo = theme === 'summer' ? logoSummer : logoBoreal;
 
@@ -19,13 +19,14 @@ export default function Ticket() {
             <div className={styles.ticket__content}>
                 <img src={qrCode} alt="QR Code do ingresso" className={styles.ticket__qr} />
                 <div className={styles.ticket__info}>
-                    <h2 className={styles.ticket__name}>Matheus Ricardo Uihara Zingarelli</h2>
+                    <h2 className={styles.ticket__name}>{ticket.name}</h2>
                     <p>Ingresso Cortesia</p>
-                    <p>Setor Pista Premium</p>
-                    <p>Data: 11/03</p>
-                    <p>Local: São Paulo/SP</p>
+                    <p>{ticket.sector}</p>
+                    <p>Data: {ticket.days.join(', ')}</p>
+                    <p>Local: São Paulo/SP</p>                   
                 </div>
             </div>
+            {ticket.consentment && <p className={styles.ticket__warning}>Entrada permitida somente se acompanhado dos pais ou responsáveis legais</p>}
         </section>
     )
 }

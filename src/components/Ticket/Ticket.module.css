@@ -1,6 +1,6 @@
 .ticket__container {
     padding: 32px;
-    background: var(--color-gradient);
+    background: var(--ticket-gradient);
     box-shadow: 5px 5px 8px 2px rgba(0, 0, 0, 0.15);
 }
 
@@ -23,6 +23,12 @@
 
 .ticket__name {
     margin-bottom: 16px;
+}
+
+.ticket__warning {
+    font-size: 0.7rem;
+    font-style: italic;
+    margin-top: 16px;
 }
 
 @media screen and (min-width: 768px) {

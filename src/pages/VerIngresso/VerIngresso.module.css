@@ -3,9 +3,23 @@
     padding-bottom: 64px;
 }
 
-.message {
+.header {
     font: 700 1.6rem/38px var(--font-text);
     margin-bottom: 32px;
+}
+
+.message {
+    margin-top: 24px;
+}
+
+.error {
+    font-size: 1.6rem;
+    padding: 40px 0;
+}
+
+.error a {
+    text-decoration: underline;
+    color: var(--font-text);
 }
 
 @media screen and (min-width: 1024px) {
