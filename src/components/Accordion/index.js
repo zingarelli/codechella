@@ -19,13 +19,13 @@ export default function Accordion({ title, children }) {
             divContent.style.height = null;
             divContainer.style.marginBottom = '8px';
             // arrow is in a pseudo-element, needs to be styled inside the CSS file   
-            button.classList.remove(`${styles.accordion__opened}`);
+            button.classList.remove(`${styles.accordion__open}`);
         }
         else {
             // show content
             divContent.style.height = `${divContent.scrollHeight}px`;
             divContainer.style.marginBottom = '24px';
-            button.classList.add(`${styles.accordion__opened}`);
+            button.classList.add(`${styles.accordion__open}`);
         }
     }
 
