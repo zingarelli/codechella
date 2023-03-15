@@ -20,7 +20,8 @@
 
 /* Custom Theme colors: Summer */
 .summer {
-  --color-gradient: linear-gradient(#C8DEEF, #FBF0DD, #FACF9D);
+  --color-gradient: linear-gradient(#C8DEEF, #FBF0DD, #FACF9D);  
+  --ticket-gradient: linear-gradient(135deg,#C8DEEF, #FBF0DD, #FACF9D);
   --primary-color: #2E7BA2;
   --secondary-color: #DF9010;
   --hover-color: #519EC5;
@@ -36,6 +37,7 @@
 /* Custom Theme colors: Boreal */
 .boreal {
   --color-gradient: linear-gradient(#304968, #36C1A0, #4650BD);
+  --ticket-gradient: linear-gradient(135deg,#304968, #36C1A0, #4650BD);
   --primary-color: #4650BD;
   --secondary-color: #008364;
   --hover-color: #606ADA;
