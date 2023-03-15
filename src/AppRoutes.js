@@ -1,4 +1,5 @@
 import { ThemeProvider } from "context/Theme";
+import ScrollToTop from "components/ScrollToTop";
 import ComprarIngresso from "pages/ComprarIngresso";
 import Experiencia from "pages/Experiencia";
 import Home from "pages/Home";
@@ -12,6 +13,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function AppRoutes() {
   return (
     <BrowserRouter>
+      <ScrollToTop /> 
       <ThemeProvider>
         <Routes>
           <Route path="/" element={<PageTemplate />}>
