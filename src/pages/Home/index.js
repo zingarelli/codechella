@@ -12,12 +12,14 @@ import Article from "components/Article";
 import { LineUpContent, LineUpLayer, LineUpWrapper } from "components/LineUp";
 import { useContext } from 'react';
 import { ThemeContext } from 'context/Theme';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
     const { theme } = useContext(ThemeContext);
     const banner = theme === 'summer' ? carousel : boreal;
     const articleImg = theme === 'summer' ? fans : band;
     const bottomBanner = theme === 'summer' ? festival : guitar;
+    const navigate = useNavigate();
 
     return (
         <>
@@ -29,7 +31,7 @@ export default function Home() {
                     title={`< 11 e 12 de Março >\nAluródromo de São Paulo`}
                 >
                     <p>Hora de programar nossa memória com novas lembranças! Uma nova experiência sobre música, linguagens e, claro, tecnologia! Somos um festival diverso, com vários artistas e referências. Divirta-se!</p>
-                    <Button image={ticket} >Comprar ingresso!</Button>
+                    <Button image={ticket} onClick={() => navigate('/ingresso/comprar')} >Comprar ingresso!</Button>
                 </Article>
                 <LineUpWrapper title='/Line-Up/'>
                     <LineUpContent title='SÁBADO <11/03>'>
