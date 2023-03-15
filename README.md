@@ -29,6 +29,8 @@ Na página 404, eu mostro a foto aleatória de um gatinho. Essa foto vem do site
 
 Na página de Perguntas Frequentes, o conteúdo da resposta é mostrado ao clicar na pergunta. Isso é chamado de "accordion". Aprendi a fazer o efeito de exibir/esconder o conteúdo [neste artigo da W3Schools](https://www.w3schools.com/howto/howto_js_accordion.asp).
 
+Criei um componente `<ScrollToTop />` para que as páginas sejam sempre mostradas a partir do topo da janela. Copiei o código desse componente do [tutorial do React Router](https://v5.reactrouter.com/web/guides/scroll-restoration/scroll-to-top).
+
 ## O desafio
 
 O **CodeChella** é um festival de música alternativa que acontece anualmente, é composto por gêneros diversos e visa promover uma experiência encantadora e inesquecível para o visitante, proporcionando uma integração multicultural e social. 
@@ -199,8 +201,6 @@ Segue abaixo detalhes sobre os novos componentes:
 
 Renderiza um título e um conteúdo, recebidos via props. Este componente é utilizado múltiplas vezes na seção de "Perguntas Frequentes", em que inserimos uma pergunta no título e a respectiva resposta no conteúdo. O título na verdade é um botão que, quando clicado, irá revelar o conteúdo da resposta. Essa interação, no entanto, será implementada no próximo sprint. Por hora, tanto a pergunta quanto sua resposta estão visíveis.
 
-![Exemplo do componente Accordion, mostrando uma pergunta na primeira linha e respectiva resposta abaixo da pergunta](https://user-images.githubusercontent.com/19349339/224023350-7d40ce05-d384-43e9-9a06-41a28567686e.png)
-
 #### Form
 
 Renderiza os campos do formulário (nome, e-mail, setor desejado e data de nascimento) e um botão para salvar os dados. Todos os campos são obrigatórios. 
@@ -219,22 +219,21 @@ Por enquanto, o conteúdo do ingresso está estático, servindo apenas de exempl
 
 ### Semanas 3 e 4
 
-O último sprint do projeto é dedicado às interações da pessoa usuária com as páginas do site. As seguintes interações foram implementadas:
+O último sprint do projeto é mais longo, dedicado às interações da pessoa usuária com as páginas do site, além dos retoques finais na aplicação. 
 
-Fiz a animação para mostrar/esconder a resposta de cada `<Accordion />` por meio da alteração da altura da div que contém a resposta. Inicialmente, tentei fazer utilizando uma variável de estado com `useState`, usando ela para alterar dinamicamente a classe do conteúdo, e então estilizar o `height` em cada classe. No entanto, para animar a altura eu devo especificar um valor para ela (`height: auto` não funciona), então eu precisava passar ao arquivo CSS a altura correta. 
+As seções a seguir são um resumo do que foi desenvolvido ou alterado durante as últimas semanas:
 
-O valor da altura de um elemento pode ser obtido com a propriedade `scrollHeight`, mas eu não sei se é possível passar valores do JSX para um arquivo CSS. No final, eu decidi alterar a altura via CSS inline, e também estilizar outros elementos inline (um `margin-bottom` maior no componente e uma rotação na imagem de triângulo presente no título). Com isso, acabei por não utilizar o `useState`. 
+#### Accordion interativo
+
+Na página de Informações, a seção de "Perguntas Frequentes" deve mostrar somente as perguntas. As respostas são exibidas ao clicar em uma pergunta. Um elemento com esse comportamento é o que se chama de "Accordion", cujo componente já havia sido criado no sprint anterior. 
+
+Implementei o comportamento de exibir/esconder as respostas por meio da alteração da altura da div que contém a resposta. Inicialmente, tentei fazer utilizando uma variável de estado com `useState`, para alterar dinamicamente a classe CSS do conteúdo conforme o estado mudasse. No entanto, para animar a altura com a propriedade `transition`, eu devo especificar um valor (`height: auto` não funciona), então eu precisava passar ao arquivo CSS a altura correta. O valor da altura de um elemento pode ser obtido com a propriedade `scrollHeight`, mas eu **não sei se é possível passar valores do JSX para um arquivo CSS**. No final, eu decidi alterar a altura via CSS inline por meio de uma função toggle chamada no evento de clique. Com isso, acabei por não utilizar o `useState`. 
+
+Também adicionei uma animação à flecha que fica ao lado da pergunta: ela rotaciona quando o componente "abre" ou "fecha", como forma de dica visual à pesssoa usuária. Essa rotação foi feita por meio da adição/remoção de uma classe aplicada ao pseudo-elemento `::after`.
 
 Segue abaixo gif mostrando um componente `<Accordion />` abrindo e fechando conforme é clicado no seu título.
 
 ![Gif mostrando um componente Accordion inicialmente fechado, com seu conteúdo sendo revelado após clicar no título, e fechando ao ser clicado novamente](https://user-images.githubusercontent.com/19349339/224329647-b955efa0-fe8f-4541-acea-0245240db10a.gif)
-
-
-#### Accordion
-
-Na página de Informações, a seção de "Perguntas Frequentes" deve mostrar somente as perguntas. As respostas são exibidas ao clicar em uma pergunta. Um elemento com esse comportamento é o que se chama de "Accordion", cujo componente já havia sido criado no sprint anterior. 
-
-Implementei o comportamento de exibir/esconder as respostas e também adicionei uma animação à flecha que fica ao lado da pergunta: ela rotaciona quando o componente "abre" ou "fecha", como forma de dica visual à pesssoa usuária.
 
 #### Validação de formulário
 
@@ -248,26 +247,40 @@ As seguintes validações foram aplicadas ao formulário da tela de compra de in
 
 - Data de nascimento: obrigatória e deve respeitar a seguinte regra: "a partir de 16 anos, todo mundo pode entrar. De 10 a 15 anos, tem que estar acompanhado dos pais ou responsáveis legais. Menores de 10 anos não podem entrar".
 
-    - A validação da idade foi feita utilizando JavaScript no evento de onChange da data de nascimento. Quando a pessoa é menor de 10 anos, o botão de submeter o formulário é desabilitado e ganha uma cor diferente para indicar isso. Quando a pessoa possui entre 10 e 15 anos, um campo de checkbox é exibido, sendo obrigatório que a pessoa marque a confirmação de que estará acompanhada dos pais ou responsáveis legais.
+    - A aplicação desta regra foi feita utilizando JavaScript no evento de onChange da data de nascimento. Quando a pessoa é menor de 10 anos, o botão de submeter o formulário é desabilitado e ganha uma cor diferente para indicar isso. Quando a pessoa possui entre 10 e 15 anos, um campo de checkbox é exibido, sendo obrigatório que a pessoa marque a confirmação de que estará acompanhada dos pais ou responsáveis legais.
+    - Modifiquei o componente `<Button />` para que ele fosse um "forwardRef". Dessa forma, o componente pode repassar ao elemento `button` uma referência para que possa ser acessado por outros componentes (no caso, pelo formulário).
 
-#### A serem implementadas
-- Armazenamento das informações do formulário;
+O gif abaixo mostra a aplicação das regras para a data de nascimento:
 
-- Visualização do ingresso com as informações enviadas via formulário;
+![gif mostrando a mensagem de erro ao inserir uma data de nascimento cuja idade seja menor de 10 anos, depois mostrando um checkbox com informação ao inserir uma data com uma idade entre 10 e 15 anos, e depois não mostrando nenhum erro ou informação ao inserir uma data para idades acima de 16 anos](https://user-images.githubusercontent.com/19349339/225400056-923cd4a4-f1f1-4bf0-a6be-a95b2cecbef1.gif)
 
-- Personalize o projeto da forma que quiser!
+#### Novo campo: data do evento
 
-    - Adicionar testes unitários
+Adicionei um novo campo ao formulário, para que a pessoa selecione os dias em que irá participar do evento. Cada dia é um checkbox, sendo necessário selecionar pelo menos 1 dia. Essa validação foi feita via JavaScript, utilizando uma variável de estado controlando a quantidade de itens selecionados. A validação é ativada ao clicar no botão de "Avançar" e, por isso, precisei modificar novamente o componente `<Button />`, adicionando uma prop `onClick` para poder passar a função de validação. 
+
+#### Armazenamento das informações do formulário
+
+Como são poucas informações sendo armazenadas, compartilhadas somente entre as páginas de compra e visualização de ingresso, decidi por não usar a Context API. Ao invés disso, eu criei uma variável de estado `ticket` no componente `<Form />`, que guarda os dados do formulário em um objeto. Este componente recebe uma função `onSubmit` via props, então aproveitei esta função para devolver à página de compra de ingresso tanto o evento de submit quanto a variável `ticket`.
+
+Na página de compra, eu salvo as informações do ingresso no localStorage do navegador, simulando o envio dos dados para um back-end. 
+
+Também criei uma condição para que, caso já haja dados no localStorage, quando a pessoa acessa a página de compras ela é redirecionada para a página de visualização do ingresso. Desse modo, o link "Ingresso" no menu de navegação exibirá dinamicamente a página mais apropriada.
+
+#### Visualização do ingresso
+
+A página de visualizar o ingresso agora obtém as informações do ingresso via localStorage, simulando uma interação com o back-end. Essas informações são repassadas para o componente `<Ticket />` por meio de uma nova prop de mesmo nome, `ticket`. 
+
+Nos dados salvos em `ticket`, há uma propriedade chamanda "consentment", que é marcada como `true` quando a pessoa tem entre 10 a 15 anos. Nestes casos, é adicionado um texto ao ingresso informando que a pessoa deve estar acompanhada dos pais ou representantes legais.
+
+Adicionei também uma condição para mostrar o ingresso somente se as informações sobre ele foram recebidas. Desse modo, caso a pessoa acesse a página sem ter preenchido o formulário, ela recebe uma mensagem com um link para preenchê-lo.
+
+Como agora a pessoa é redirecionada para esta página caso as informações sobre o ingresso ja estejam salvas no localStorage, também adicionei um texto com um link para que a pessoa possa comprar um novo ingresso. Ao clicar neste link, os dados de localStorage são removidos e a pessoa é redirecionada para o formulário.
 
 ## TODO
 
-- Ver no Discord se faz sentido a regra dos menores de 10 anos e depois maiores de 13 anos. Não deveria ser entre 10 e 15 o consentimento?
+- Aplicar testes unitários simples aos componentes.
 
-- fazer gif da validação da data de nascimento;
-
-- Ver a possibilidade de usar useRef() no Accordion para selecionar os elementos a serem atualizados.
-
-- Aplicar testes unitários simples aos componentes, caso sobre tempo nas últimas semanas.
+- refatorar o Form e criar componentes para os inputs?
 
 ## Instalação
 
@@ -299,6 +312,8 @@ This project has several images. In order to load them faster, I've used [TinyPN
 There's a 404 page in which I show a random cat pic. I've used [Cataas (Cat as a service)](https://cataas.com/#/) to get those pics.
 
 In the FAQ page, content for the asnwer is displayed when one clicks on the question. This is called "accordion". I've learned how to hide/show content [in this article of W3Schools](https://www.w3schools.com/howto/howto_js_accordion.asp).
+
+I've created a component `<ScrollToTop />` so that pages are always displayed from the top of the window. I copied the code for this component from [React Router's tutorial](https://v5.reactrouter.com/web/guides/scroll-restoration/scroll-to-top).
 
 ## About the Challenge
 
@@ -369,9 +384,15 @@ I've continued developing the rest of the pages: FAQ page, form page and ticket 
 
 Having developed so many components, routes and a page template in the previous week helped me easily create the new pages, with the need of only creating three new components to deal with specific sections: the form, the FAQ section and the card to show a ticket.
 
-### Week 3
+### Weeks 3 and 4
 
-Under construction... 🚧
+The last weeks were dedicated to user interaction and final touches in the website.
+
+In the page to buy a ticket, I've added built-in form validation and created a state variable `ticket` to share ticket information between pages and the `<Form />` component. When the form is valid, ticket data is submitted and stored in the browser's localStorage. This way, the page that shows the ticket can now retrieve ticket data from localStorage.
+
+In the FAQ page, I've added an animation that shows/hides the answer to each question when the user clicks on it. This effect can be seen in the gif below.
+
+![Gif showing a question and its content being revealed when the user clicks on it, then hidden again after another click](https://user-images.githubusercontent.com/19349339/224329647-b955efa0-fe8f-4541-acea-0245240db10a.gif)
 
 ## Instalation
 
