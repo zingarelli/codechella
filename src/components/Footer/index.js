@@ -1,13 +1,13 @@
 import styles from './Footer.module.css';
-// TODO: is there a better way to import all this?
 import logoSummer from 'assets/logo/logo-gray.png';
 import logoBoreal from 'assets/logo/logo-white.png';
 import { instagramSummer, twitchSummer, twitterSummer, whatsappSummer, instagramBoreal, twitchBoreal, twitterBoreal, whatsappBoreal } from './assets/socials';
 import { useContext } from 'react';
 import { ThemeContext } from 'context/Theme';
+import ThemeSwitch from 'components/ThemeSwitch';
 
 export default function Footer() {
-    const { theme, setTheme } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
     // import assets
     const logo = theme === 'summer' ? logoSummer : logoBoreal;
@@ -15,11 +15,6 @@ export default function Footer() {
     const twitch = theme === 'summer' ? twitchSummer : twitchBoreal;
     const twitter = theme === 'summer' ? twitterSummer : twitterBoreal;
     const whatsapp = theme === 'summer' ? whatsappSummer : whatsappBoreal;
-
-    const changeTheme = (newTheme) => {
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-    }
 
     return (
         <footer className={styles.footer__container} >
@@ -39,11 +34,7 @@ export default function Footer() {
                 <p>Desenvolvido por Alura.</p>
                 <p>Projeto fictício sem fins comerciais.</p>
             </div>
-            <div className={styles.theme__container}>
-                <p>Alterar tema:</p>
-                <span onClick={() => changeTheme('summer')} className={styles.theme__summer}>Summer</span>
-                <span onClick={() => changeTheme('boreal')} className={styles.theme__boreal}>Boreal</span>
-            </div>
+            <ThemeSwitch />            
         </footer>
     )
 }
