@@ -1,7 +1,4 @@
-import experience from './assets/banner.png';
-import joy from './assets/joy.png';
-import recycle from './assets/recycle.png';
-import ferrisWheel from './assets/ferris-wheel.png';
+import { experience, joy, recycle, ferrisWheel } from './assets'
 import Banner from 'components/Banner';
 import Article from 'components/Article';
 

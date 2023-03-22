@@ -1,11 +1,5 @@
 import styles from './Home.module.css';
-import ticket from "./assets/common/ticket-icon.png";
-import carousel from "./assets/summer/carousel.png";
-import festival from "./assets/summer/festival.png";
-import fans from "./assets/summer/fans.png";
-import boreal from "./assets/boreal/boreal.png"
-import band from "./assets/boreal/band.png"
-import guitar from "./assets/boreal/guitar.png"
+import { ticket, carousel, festival, fans, boreal, band, guitar } from './assets';
 import Banner from "components/Banner";
 import Button from "components/Button";
 import Article from "components/Article";

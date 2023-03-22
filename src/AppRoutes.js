@@ -1,13 +1,6 @@
 import { ThemeProvider } from "context/Theme";
 import ScrollToTop from "components/ScrollToTop";
-import ComprarIngresso from "pages/ComprarIngresso";
-import Experiencia from "pages/Experiencia";
-import Home from "pages/Home";
-import Info from "pages/Info";
-import Mapa from "pages/Mapa";
-import NotFound from "pages/NotFound";
-import PageTemplate from "pages/PageTemplate";
-import VerIngresso from 'pages/VerIngresso';
+import { ComprarIngresso, Experiencia, Home, Info, Mapa, NotFound, PageTemplate, VerIngresso } from "pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function AppRoutes() {

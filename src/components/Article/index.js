@@ -1,7 +1,3 @@
-/*
-    Not using CSS module because this component will be used as a template 
-    for others components that might change the styles for its inner elements
-*/
 import styles from './Article.module.css';
 
 /**

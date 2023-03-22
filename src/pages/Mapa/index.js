@@ -1,8 +1,4 @@
-import banner from './assets/banner.png';
-import mapa from './assets/mapa.png';
-import pista from './assets/pista.png';
-import premium from './assets/premium.png';
-import cadeiras from './assets/cadeiras.png';
+import { banner, mapa, pista, premium, cadeiras } from './assets';
 import styles from './Mapa.module.css';
 import Banner from 'components/Banner';
 import Article from 'components/Article';

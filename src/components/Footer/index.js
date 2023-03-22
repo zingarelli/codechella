@@ -2,14 +2,7 @@ import styles from './Footer.module.css';
 // TODO: is there a better way to import all this?
 import logoSummer from 'assets/logo/logo-gray.png';
 import logoBoreal from 'assets/logo/logo-white.png';
-import instagramSummer from './assets/socials/instagram-gray.png';
-import twitchSummer from './assets/socials/twitch-gray.png';
-import twitterSummer from './assets/socials/twitter-gray.png';
-import whatsappSummer from './assets/socials/whatsapp-gray.png';
-import instagramBoreal from './assets/socials/instagram-white.png';
-import twitchBoreal from './assets/socials/twitch-white.png';
-import twitterBoreal from './assets/socials/twitter-white.png';
-import whatsappBoreal from './assets/socials/whatsapp-white.png';
+import { instagramSummer, twitchSummer, twitterSummer, whatsappSummer, instagramBoreal, twitchBoreal, twitterBoreal, whatsappBoreal } from './assets/socials';
 import { useContext } from 'react';
 import { ThemeContext } from 'context/Theme';
 
