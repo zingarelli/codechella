@@ -16,7 +16,7 @@ describe('Accordion', () => {
         expect(button).toBeInTheDocument();
     })
 
-    it('should not render the asnwer when mounted', () => {
+    it('should not render the answer when mounted', () => {
         const answer = screen.queryByText(content);
         expect(answer).not.toBeInTheDocument();
     })
