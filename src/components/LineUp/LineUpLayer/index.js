@@ -1,4 +1,4 @@
-import styles from './LineUpContent.module.css'
+import styles from '../LineUpContent/LineUpContent.module.css'
 
 /**
  * Component to render band names. Content inside it have texts with different font sizes and weight.
