@@ -100,7 +100,11 @@ export default function Form({ onSubmit }) {
     }
 
     return (
-        <form className={styles.form__container} onSubmit={(e) => onSubmit(e, ticket)} >
+        <form 
+            className={styles.form__container} 
+            onSubmit={(e) => onSubmit(e, ticket)} 
+            aria-label='register-form'
+        >
             <p className={styles.form__info}>Todos os campos são obrigatórios</p>
 
             <div className={styles.form__field}>
